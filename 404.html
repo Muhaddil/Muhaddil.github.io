@@ -5,138 +5,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+	<link rel="stylesheet" href="/404/404.css">
 	<title>¡Página no encontrada!</title>
 </head>
 
-<style>
-body {
-    color: white; /* Sets the text color to white */
-    text-align: center; /* Centers the text */
-    font-family: 'Courier New', Courier, monospace; /* Sets the font to Courier New */
-    display: flex; /* Sets the display to flex */
-    flex-direction: column; /* Sets the flex direction to column */
-    justify-content: center; /* Centers the content vertically */
-    align-items: center; /* Centers the content horizontally */
-    height: 100vh; /* Sets the height to 100% of the viewport height */
-    margin: 0; /* Removes the margin */
-}
-h1 {
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adds a shadow to the text */
-    color:white; /* Sets the text color to white */
-    font-family: 'Georgia'; /* Changed to Georgia */
-    font-size: 310%; /* Sets the font size to 310% */
-}
-p {
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adds a shadow to the text */
-    color:white; /* Sets the text color to white */
-    font-size: 110%; /* Sets the font size to 110% */
-}
-.boton {
-    background-color: #000000; /* Sets the background color to black */
-    color: white; /* Sets the text color to white */
-    font-weight: bold; /* Makes the text bold */
-    padding: 10px 20px; /* Adds padding */
-    text-decoration: none; /* Removes the text decoration */
-    border-radius: 5px; /* Rounds the corners */
-    box-shadow: 2px 2px 4px rgba(167, 166, 177, 0.5); /* Adds a shadow to the button */
-    transition: all 0.5s ease; /* Adds a transition effect */
-    margin-bottom: 20px; /* Adds a bottom margin */
-    display: inline-block; /* Sets the display to inline-block */
-}
-.boton:hover {
-    background-color: rgb(197, 0, 1); /* Changes the background color when hovered */
-    transform: scale(1.5); /* Scales the button when hovered */
-}
-img {
-    max-width: 100%; /* Sets the maximum width to 100% */
-    height: auto; /* Sets the height to auto */
-}
-
-.fly-away {
-animation: flyAway 3s linear forwards; /* Applies the flyAway animation */
-}
-
-@keyframes flyAway {
-0% { transform: rotate(0deg) translate(0, 0); opacity: 1; } /* Initial state of the animation */
-50% { transform: rotate(-45deg) translate(0, 0); opacity: 1; } /* Mid state of the animation */
-100% { transform: translate(2000px, -2000px); opacity: 0; } /* Final state of the animation */
-}
-</style>
 <body>
 	<main class="container">
 		<h1>404 - No encontrado</h1>
 		<p>Lo sentimos, esta página no existe.</p>
 		<div><a class="boton" href="/">Ir al menú principal</a></div>
 		</br>
-		<div><img src="./404.png" alt="Error 404"></div>
+		<div><img src="/404/404.png" alt="Error 404"></div>
 	</main>
-	<script>
-		// Constants
-const GRADIENT_ANGLE = 150;
-const COLOR_START = "#000";
-const COLOR_END = "#FF0000";
-const INITIAL_PERCENTAGE = 50;
-const MOUSEMOVE_FACTOR = 40;
-const MIN_PERCENTAGE = 30;
-const MAX_PERCENTAGE = 70;
-const PAGE_LOAD_DELAY = 4000;
-const ANIMATION_DURATION = 2800;
-const REDIRECT_URL = "/";
-
-// Function to change the gradient
-function changeGradient(x) {
-  const bgWebKit = `linear-gradient(${GRADIENT_ANGLE}deg, ${COLOR_START} ${x}%, ${COLOR_END} ${
-    x + 10
-  }%)`;
-  const bgMoz = `linear-gradient(${GRADIENT_ANGLE}deg, ${COLOR_START} ${x}%, ${COLOR_END} ${
-    x + 10
-  }%)`;
-  document.body.style.backgroundImage = bgWebKit;
-  document.body.style.backgroundImage = bgMoz;
-}
-
-// Changes the gradient on page load
-document.addEventListener("DOMContentLoaded", function () {
-  changeGradient(INITIAL_PERCENTAGE);
-});
-
-// Changes the gradient with mouse movement
-document.body.addEventListener("mousemove", function (e) {
-  let x = (e.clientX / window.innerWidth) * MOUSEMOVE_FACTOR; // Mouse position on the X axis
-  x = 60 - x; // Inverts the direction of the gradient
-  x = Math.min(Math.max(x, MIN_PERCENTAGE), MAX_PERCENTAGE); // Limits x to a range of 30 to 70
-  changeGradient(x);
-});
-
-// Add a fade duration
-const FADE_DURATION = 1000;
-
-// Fade start function
-function startFadeOut() {
-  document.body.style.transition = `opacity ${FADE_DURATION}ms`;
-  document.body.style.opacity = 0;
-}
-
-// Modify the window loading function
-window.onload = function () {
-  setTimeout(function () {
-    const img = document.querySelector("img");
-    img.classList.add("fly-away");
-
-    // Start fading before redirection
-    setTimeout(function () {
-      startFadeOut();
-
-      // Wait for the fade to complete before redirecting
-      setTimeout(function () {
-        window.location.href = REDIRECT_URL;
-      }, FADE_DURATION);
-    }, ANIMATION_DURATION);
-  }, PAGE_LOAD_DELAY);
-};
-
-
-	</script>
+	<script src="/404/404.js"></script>
 </body>
 
 </html> 
