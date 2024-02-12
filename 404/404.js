@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Changes the gradient with mouse movement
 document.body.addEventListener("mousemove", function (e) {
-  let x = (e.clientX / window.innerWidth) * MOUSEMOVE_FACTOR; // Mouse position on the X axis
-  x = 60 - x; // Inverts the direction of the gradient
-  x = Math.min(Math.max(x, MIN_PERCENTAGE), MAX_PERCENTAGE); // Limits x to a range of 30 to 70
-  changeGradient(x);
-});
+    let x = ((e.clientX / window.innerWidth) - 0.5) * MOUSEMOVE_FACTOR; // Mouse position on the X axis
+    x = 50 - x; // Adjusts the center of the gradient
+    x = Math.min(Math.max(x, MIN_PERCENTAGE), MAX_PERCENTAGE); // Limits x to a range of 30 to 70
+    changeGradient(x);
+  });  
 
 // Add a fade duration
 const FADE_DURATION = 1000;

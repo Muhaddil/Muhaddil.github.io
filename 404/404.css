@@ -55,11 +55,11 @@ img {
     opacity: 1;
   } /* Initial state of the animation */
   50% {
-    transform: rotate(-45deg) translate(0, 0);
+    transform: rotate(-20deg) translate(0, 0);
     opacity: 1;
   } /* Mid state of the animation */
   100% {
-    transform: translate(2000px, -2000px);
+    transform: translate(4000px, -2000px);
     opacity: 0;
   } /* Final state of the animation */
 }
