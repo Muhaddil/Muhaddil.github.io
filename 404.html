@@ -2,22 +2,75 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8"> <!-- Defines the character set for the document -->
-	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Makes the webpage responsive -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> <!-- Links to the Pico CSS framework -->
-	<link rel="stylesheet" href="./404/404.css"> <!-- Links to the CSS file for this page -->
-	<title>¡Página no encontrada!</title> <!-- Sets the title of the webpage -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+	<title>¡Página no encontrada!</title>
 </head>
 
+<style>
+body {
+    color: white; /* Sets the text color to white */
+    text-align: center; /* Centers the text */
+    font-family: 'Courier New', Courier, monospace; /* Sets the font to Courier New */
+    display: flex; /* Sets the display to flex */
+    flex-direction: column; /* Sets the flex direction to column */
+    justify-content: center; /* Centers the content vertically */
+    align-items: center; /* Centers the content horizontally */
+    height: 100vh; /* Sets the height to 100% of the viewport height */
+    margin: 0; /* Removes the margin */
+}
+h1 {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adds a shadow to the text */
+    color:white; /* Sets the text color to white */
+    font-family: 'Georgia'; /* Changed to Georgia */
+    font-size: 310%; /* Sets the font size to 310% */
+}
+p {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adds a shadow to the text */
+    color:white; /* Sets the text color to white */
+    font-size: 110%; /* Sets the font size to 110% */
+}
+.boton {
+    background-color: #000000; /* Sets the background color to black */
+    color: white; /* Sets the text color to white */
+    font-weight: bold; /* Makes the text bold */
+    padding: 10px 20px; /* Adds padding */
+    text-decoration: none; /* Removes the text decoration */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 2px 2px 4px rgba(167, 166, 177, 0.5); /* Adds a shadow to the button */
+    transition: all 0.5s ease; /* Adds a transition effect */
+    margin-bottom: 20px; /* Adds a bottom margin */
+    display: inline-block; /* Sets the display to inline-block */
+}
+.boton:hover {
+    background-color: rgb(197, 0, 1); /* Changes the background color when hovered */
+    transform: scale(1.5); /* Scales the button when hovered */
+}
+img {
+    max-width: 100%; /* Sets the maximum width to 100% */
+    height: auto; /* Sets the height to auto */
+}
+
+.fly-away {
+animation: flyAway 3s linear forwards; /* Applies the flyAway animation */
+}
+
+@keyframes flyAway {
+0% { transform: rotate(0deg) translate(0, 0); opacity: 1; } /* Initial state of the animation */
+50% { transform: rotate(-45deg) translate(0, 0); opacity: 1; } /* Mid state of the animation */
+100% { transform: translate(2000px, -2000px); opacity: 0; } /* Final state of the animation */
+}
+</style>
 <body>
 	<main class="container">
-		<h1>404 - No encontrado</h1> <!-- Heading of the page -->
-		<p>Lo sentimos, esta página no existe.</p> <!-- Message indicating the page was not found -->
-		<div><a class="boton" href="/">Ir al menú principal</a></div> <!-- Button to go back to the main menu -->
+		<h1>404 - No encontrado</h1>
+		<p>Lo sentimos, esta página no existe.</p>
+		<div><a class="boton" href="/">Ir al menú principal</a></div>
 		</br>
-		<div><img src="./404/404.png" alt="Error 404"></div> <!-- Image indicating a 404 error -->
+		<div><img src="./404/404.png" alt="Error 404"></div>
 	</main>
-	<script src="./404/404.js"></script> <!-- Links to the JavaScript file for this page -->
+	<script src="./404/404.js"></script>
 </body>
 
-</html>
+</html> 
