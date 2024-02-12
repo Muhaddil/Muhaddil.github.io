@@ -1,74 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-	<link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-	<link rel="icon" type="image/ico" href="favicon.ico">
-	<title>Páginas web de Muhaddil</title>
+	<meta charset="UTF-8"> <!-- Defines the character set for the document -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Makes the webpage responsive -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> <!-- Links to the Pico CSS framework -->
+	<link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png"> <!-- Specifies the favicon for the webpage -->
+	<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png"> <!-- Specifies the favicon for the webpage -->
+	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png"> <!-- Specifies the favicon for the webpage -->
+	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png"> <!-- Specifies the favicon for the webpage -->
+	<link rel="icon" type="image/ico" href="favicon.ico"> <!-- Specifies the favicon for the webpage -->
+	<title>Páginas web de Muhaddil</title> <!-- Sets the title of the webpage -->
 	<style>
-		html,
+		/* CSS styles are defined here */
 		body {
-			font-family: sans-serif;
-			line-height: 22px;
-		}
-
-		.container {
+			color: white;
+			text-align: center;
+			font-family: 'Courier New', Courier, monospace;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
-			flex-wrap: wrap;
-			padding-block: 1rem;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			opacity: 0; /* The page initially loads as invisible */
+			transition: opacity 1s ease-in-out; /* Smooth transition of opacity */
 		}
-
 		h1 {
-			width: 100%;
-			text-align: center;
-			line-height: normal;
-			margin-block-end: 1rem;
+			text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+			color:white;
+			font-family: 'Georgia'; /* Changed to Georgia */
+			font-size: 310%;
 		}
-
-		ul>li {
-			list-style-type: disc;
-			padding: 2px;
+		p {
+			text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+			color:white;
+			font-size: 110%;
 		}
-
-		div {
-			width: 100%;
-			text-align: center;
+		.boton {
+			background-color: #000000;
+			color: white;
+			font-weight: bold;
+			padding: 10px 20px;
+			text-decoration: none;
+			border-radius: 5px;
+			box-shadow: 2px 2px 4px rgba(167, 166, 177, 0.5);
+			transition: all 0.5s ease;
+			margin-bottom: 20px;
+			display: inline-block;
+		}
+		.boton:hover {
+			background-color: rgb(197, 0, 1);
+			transform: scale(1.5);
+		}
+		img {
+			max-width: 100%;
+			height: auto;
 		}
 	</style>
 </head>
-
+<body onload="document.body.style.opacity = 1;"> <!-- The page becomes visible when it loads -->
 <body>
 	<main class="container">
-		<h1 class="title">Paginas disponibles:</h1>
-		<ul>
-			<li><a href="/RSSWikiPageCreator" title="Creador de Páginas Wiki">Creador de Páginas Wiki!</a></li>
-			<li><a href="/RSSspaceChecker " title="¿Estoy en el territorio de la RSS?">¿Estoy en el territorio de la RSS?</a></li> 
-			<li><a href="/Image-Compressor" title="Compresor de Imágenes">Compresor de Imágenes</a></li>
-					
-		</ul>
+		<h1 class="title">Paginas disponibles:</h1> <!-- Heading of the page -->
+		
+			<a class="boton" href="/RSSWikiPageCreator" title="Wiki Page Creator">!Creador de Páginas Wiki!!</a> <!-- Link to the Wiki Page Creator -->
+			<a class="boton" href="/RSSspaceChecker " title="Am I in the territory of the RSS?">¿Estoy en el territorio de la RSS?</a> <!-- Link to the RSS Space Checker -->
+			<a class="boton" href="/Image-Compressor" title="Image Compressor">Compresor de Imágenes</a> <!-- Link to the Image Compressor -->
 		<div>
 		</br>
-		<a href="https://github.com/Muhaddil" title="GitHub">Mi perfil de GitHub</a> 
+		<a class="boton" href="https://github.com/Muhaddil" title="GitHub">Mi perfil de GitHub</a> <!-- Link to the GitHub profile -->
 	</br>
-		<div>
-			<ul>
-				</br>
-				</br>
-				</br>
-				</br>
-				</br>
-				<img src="https://www.royalspacesociety.com/wp-content/uploads/2020/10/RSS_PNG_NMS4.png" alt="Royal Space Society"
-					width="250" height="250" /> 
-			</ul>
-			Royal Space Society
-		</div>
+	<div>
+		<ul>
+			</br>
+			</br>
+			</br>
+			<img src="https://www.royalspacesociety.com/wp-content/uploads/2020/10/RSS_PNG_NMS4.png" alt="Royal Space Society"
+				width="250" height="250" /> <!-- Image of the Royal Space Society -->
+		</ul>
+		Royal Space Society <!-- Text indicating the Royal Space Society -->
+	</div>
 	</main>
 </body>
 
