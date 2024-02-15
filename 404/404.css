@@ -46,7 +46,7 @@ img {
 }
 
 .fly-away {
-  animation: flyAway 3s linear forwards; /* Applies the flyAway animation */
+  animation: flyAway 1.5s linear forwards; /* Applies the flyAway animation */
 }
 
 @keyframes flyAway {

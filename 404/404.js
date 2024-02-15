@@ -6,8 +6,8 @@ const INITIAL_PERCENTAGE = 50;
 const MOUSEMOVE_FACTOR = 40;
 const MIN_PERCENTAGE = 30;
 const MAX_PERCENTAGE = 70;
-const PAGE_LOAD_DELAY = 4000;
-const ANIMATION_DURATION = 2800;
+const PAGE_LOAD_DELAY = 3500;
+const ANIMATION_DURATION = 1600;
 const REDIRECT_URL = "/";
 
 // Function to change the gradient
