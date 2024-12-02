@@ -2,87 +2,121 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8"> <!-- Defines the character set for the document -->
-	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Makes the webpage responsive -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> <!-- Links to the Pico CSS framework -->
-	<link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png"> <!-- Specifies the favicon for the webpage -->
-	<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png"> <!-- Specifies the favicon for the webpage -->
-	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png"> <!-- Specifies the favicon for the webpage -->
-	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png"> <!-- Specifies the favicon for the webpage -->
-	<link rel="icon" type="image/ico" href="favicon.ico"> <!-- Specifies the favicon for the webpage -->
-	<title>Páginas web de Muhaddil</title> <!-- Sets the title of the webpage -->
-	<style>
-		/* CSS styles are defined here */
-		body {
-			color: white;
-			text-align: center;
-			font-family: 'Helvetica', monospace;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			margin: 0;
-			opacity: 0; /* The page initially loads as invisible */
-			transition: opacity 1s ease-in-out; /* Smooth transition of opacity */
-		}
-		h1 {
-			text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-			color:white;
-			font-family: 'Georgia'; /* Changed to Georgia */
-			font-size: 310%;
-		}
-		p {
-			text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-			color:white;
-			font-size: 110%;
-		}
-		.boton {
-			background-color: #000000;
-			color: white;
-			font-weight: bold;
-			padding: 10px 20px;
-			text-decoration: none;
-			border-radius: 5px;
-			box-shadow: 2px 2px 4px rgba(167, 166, 177, 0.5);
-			transition: all 0.5s ease;
-			margin-bottom: 20px;
-			display: inline-block;
-		}
-		.boton:hover {
-			background-color: rgb(197, 0, 1);
-			transform: scale(1.1);
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora las herramientas y proyectos creados por Muhaddil. Descubre software innovador y soluciones personalizadas para tus necesidades.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="icon" type="image/png" href="icons/favicon-128x128.png">
+    <title>Páginas Web de Muhaddil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto Mono', monospace;
+            text-align: center;
+            color: #d1d5db;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #0f0f0f, #1a1a1d, #222831, #30475e);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            opacity: 0;
+            transition: opacity 2.5s ease-in-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            color: #a0c4ff;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(160, 196, 255, 0.5);
+        }
+
+        p {
+            color: #adb5bd;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #1a1a1d;
+            color: #d1d5db;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid #4b5563;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .boton:hover {
+            background-color: #a0c4ff;
+            color: #1a1a1d;
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .footer a {
+            color: #a0c4ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body onload="document.body.style.opacity = 1;"> <!-- The page becomes visible when it loads -->
+
 <body>
-	<main class="container">
-		<h1 class="title">Paginas disponibles:</h1> <!-- Heading of the page -->
-		
-			<a class="boton" href="/RSSWikiPageCreator" title="Creador de Páginas Wiki">Creador de Páginas Wiki</a> <!-- Link to the Wiki Page Creator -->
-			<a class="boton" href="https://github.com/Muhaddil/FiveM-MilageVehicleFailure" title="Adds a dynamic vehicle breakdown system to your FiveM server">FiveM-MilageVehicleFailure</a> <!-- Link to the FiveM-MilageVehicleFailure-->
-			<a class="boton" href="https://github.com/Muhaddil/muhaddil_insurance" title="Adds a custom NPC, allowing players to purchase medical insurance in-game ">Muhaddil_insurance</a> <!-- Link to the muhaddil_insurance-->
-			<a class="boton" href="/Image-Compressor" title="Compresor de Imágenes">Compresor de Imágenes</a> <!-- Link to the Image Compressor -->
-		<div>
-		</br>
-		<a class="boton" href="https://github.com/Muhaddil" title="GitHub">Mi perfil de GitHub</a> <!-- Link to the GitHub profile -->
-	</br>
-	<!-- <div>
-		<ul>
-			</br>
-			</br>
-			</br>
-			<img src="https://www.royalspacesociety.com/wp-content/uploads/2020/10/RSS_PNG_NMS4.png" alt="Royal Space Society"
-				width="250" height="250" />
-		</ul>
-		Royal Space Society
-	</div> -->
-	</main>
+    <header>
+        <h1>Páginas Disponibles</h1>
+        <!-- <p>Descubre nuestras herramientas y proyectos destacados</p> -->
+    </header>
+
+    <main>
+        <a class="boton" href="/RSSWikiPageCreator" aria-label="Creador de Páginas Wiki">Creador de Páginas Wiki</a>
+        <a class="boton" href="https://github.com/Muhaddil/FiveM-MilageVehicleFailure" aria-label="Sistema de fallos dinámico para vehículos en FiveM">FiveM-MilageVehicleFailure</a>
+        <a class="boton" href="https://github.com/Muhaddil/muhaddil_insurance" aria-label="Sistema de seguro médico en FiveM">Muhaddil Insurance</a>
+        <a class="boton" href="/Image-Compressor" aria-label="Compresor de Imágenes">Compresor de Imágenes</a>
+    </main>
+
+    <footer class="footer">
+        <p>Visita mi perfil en <a href="https://github.com/Muhaddil" aria-label="Perfil de GitHub">GitHub</a></p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 
 </html>
