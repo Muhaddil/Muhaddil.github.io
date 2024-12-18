@@ -38,7 +38,7 @@ p {
     0,
     1
   ); /* Changes the background color when hovered */
-  transform: scale(1.5); /* Scales the button when hovered */
+  transform: scale(1.1); /* Scales the button when hovered */
 }
 img {
   max-width: 100%; /* Sets the maximum width to 100% */
