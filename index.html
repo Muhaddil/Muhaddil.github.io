@@ -134,8 +134,19 @@
     </footer>
 
     <script>
+
         window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
+            const urlParams = new URLSearchParams(window.location.search);
+            const fade = urlParams.get('fade');
+
+            // Longer fade-in effect if fade=true
+            if (fade === 'true') {
+                document.body.classList.add('loaded');
+                document.body.style.transition = "opacity 2.5s ease-in-out"; // Longer fade
+            } else {
+                document.body.classList.add('loaded');
+                document.body.style.transition = "opacity 0.5s ease-in-out"; // Shorter fade
+            }
         });
     </script>
 </body>
