@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explora las herramientas y proyectos creados por Muhaddil. Descubre software innovador y soluciones personalizadas para tus necesidades.">
+    <meta name="description"
+        content="Explora las herramientas y proyectos creados por Muhaddil. Descubre software innovador y soluciones personalizadas para tus necesidades.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="icon" type="image/png" href="icons/favicon-128x128.png">
     <title>Páginas Web de Muhaddil</title>
@@ -38,9 +39,11 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -92,6 +95,15 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 70%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -102,10 +114,19 @@
     </header>
 
     <main>
-        <a class="boton" href="/RSSWikiPageCreator" aria-label="Creador de Páginas Wiki">Creador de Páginas Wiki</a>
-        <a class="boton" href="https://github.com/Muhaddil/FiveM-MilageVehicleFailure" aria-label="Sistema de fallos dinámico para vehículos en FiveM">FiveM-MilageVehicleFailure</a>
-        <a class="boton" href="https://github.com/Muhaddil/muhaddil_insurance" aria-label="Sistema de seguro médico en FiveM">Muhaddil Insurance</a>
-        <a class="boton" href="https://nmscd.com/NMSGlyphRandomizer/" aria-label="Generador de Glifos NMS">Generador de Glifos para NMS</a>
+        <div class="form">
+            <a class="boton" href="/RSSWikiPageCreator" aria-label="Creador de Páginas Wiki">Creador de Páginas Wiki</a>
+            <a class="boton" href="https://github.com/Muhaddil/FiveM-MilageVehicleFailure"
+                aria-label="Sistema de fallos dinámico para vehículos en FiveM">FiveM-MilageVehicleFailure</a>
+            <a class="boton" href="https://github.com/Muhaddil/muhaddil_insurance"
+                aria-label="Sistema de seguro médico en FiveM">Muhaddil Insurance (FiveM)</a>
+            <a class="boton" href="https://github.com/Muhaddil/muhaddil-machines"
+                aria-label="Sistema de seguro médico en FiveM">Muhaddil Machines (FiveM)</a>
+            <a class="boton" href="https://github.com/Muhaddil/muhaddil_billing"
+                aria-label="Sistema de seguro médico en FiveM">Muhaddil Billing (FiveM)</a>
+            <a class="boton" href="https://nmscd.com/NMSGlyphRandomizer/" aria-label="Generador de Glifos NMS">Generador
+                de Glifos para NMS</a>
+        </div>
     </main>
 
     <footer class="footer">
