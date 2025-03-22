@@ -1,65 +1,140 @@
+:root {
+  --primary: #7c3aed;
+  --gradient: linear-gradient(135deg, #0f0f0f 0%, #1a1a1d 50%, #222831 100%);
+  --cursor-size: 30px;
+}
+
+* {
+  cursor: none !important;
+  font-family: 'Inter', sans-serif;
+}
+
 body {
-  color: white; /* Sets the text color to white */
-  text-align: center; /* Centers the text */
-  font-family: "Courier New", Courier, monospace; /* Sets the font to Courier New */
-  display: flex; /* Sets the display to flex */
-  flex-direction: column; /* Sets the flex direction to column */
-  justify-content: center; /* Centers the content vertically */
-  align-items: center; /* Centers the content horizontally */
-  height: 100vh; /* Sets the height to 100% of the viewport height */
-  margin: 0; /* Removes the margin */
+  background: var(--gradient);
+  color: #e5e7eb;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
 }
+
+.custom-cursor {
+  position: fixed;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.active {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(124, 58, 237, 0.2);
+}
+
 h1 {
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adds a shadow to the text */
-  color: white; /* Sets the text color to white */
-  font-family: "Georgia"; /* Changed to Georgia */
-  font-size: 310%; /* Sets the font size to 310% */
+  font-size: 4rem;
+  color: var(--primary);
+  text-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+  margin-bottom: 1rem;
 }
+
 p {
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adds a shadow to the text */
-  color: white; /* Sets the text color to white */
-  font-size: 110%; /* Sets the font size to 110% */
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
+
 .boton {
-  background-color: #000000; /* Sets the background color to black */
-  color: white; /* Sets the text color to white */
-  font-weight: bold; /* Makes the text bold */
-  padding: 10px 20px; /* Adds padding */
-  text-decoration: none; /* Removes the text decoration */
-  border-radius: 5px; /* Rounds the corners */
-  box-shadow: 2px 2px 4px rgba(167, 166, 177, 0.5); /* Adds a shadow to the button */
-  transition: all 0.5s ease; /* Adds a transition effect */
-  margin-bottom: 20px; /* Adds a bottom margin */
-  display: inline-block; /* Sets the display to inline-block */
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
+
 .boton:hover {
-  background-color: rgb(
-    197,
-    0,
-    1
-  ); /* Changes the background color when hovered */
-  transform: scale(1.1); /* Scales the button when hovered */
+  background: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
 }
+
+/* .boton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.6s ease;
+}
+
+.boton:hover::before {
+  left: 100%;
+} */
+
 img {
-  max-width: 100%; /* Sets the maximum width to 100% */
-  height: auto; /* Sets the height to auto */
+  max-width: 400px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease;
 }
 
 .fly-away {
-  animation: flyAway 1.5s linear forwards; /* Applies the flyAway animation */
+  animation: spaceLaunch 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-@keyframes flyAway {
+@keyframes spaceLaunch {
   0% {
     transform: rotate(0deg) translate(0, 0);
     opacity: 1;
-  } /* Initial state of the animation */
+  }
+
   50% {
     transform: rotate(-20deg) translate(0, 0);
     opacity: 1;
-  } /* Mid state of the animation */
+  }
+
   100% {
     transform: translate(4000px, -2000px);
     opacity: 0;
-  } /* Final state of the animation */
+  }
+}
+
+.particle {
+  position: absolute;
+  background: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  img {
+    max-width: 250px;
+  }
 }

@@ -1,154 +1,209 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explora las herramientas y proyectos creados por Muhaddil. Descubre software innovador y soluciones personalizadas para tus necesidades.">
+    <meta name="description" content="Portfolio de Muhaddil">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="icons/favicon-128x128.png">
-    <title>Páginas Web de Muhaddil</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto Mono', monospace;
-            text-align: center;
-            color: #d1d5db;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(-45deg, #0f0f0f, #1a1a1d, #222831, #30475e);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            opacity: 0;
-            transition: opacity 2.5s ease-in-out;
-        }
-
-        body.loaded {
-            opacity: 1;
-        }
-
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        h1 {
-            color: #a0c4ff;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(160, 196, 255, 0.5);
-        }
-
-        p {
-            color: #adb5bd;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .boton {
-            display: inline-block;
-            background-color: #1a1a1d;
-            color: #d1d5db;
-            font-weight: bold;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            border: 1px solid #4b5563;
-            margin: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .boton:hover {
-            background-color: #a0c4ff;
-            color: #1a1a1d;
-            transform: translateY(-5px);
-        }
-
-        .footer {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-
-        .footer a {
-            color: #a0c4ff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            max-width: 70%;
-            margin: 0 auto;
-        }
-    </style>
+    <title>Muhaddil | Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <h1>Páginas Disponibles</h1>
-        <!-- <p>Descubre nuestras herramientas y proyectos destacados</p> -->
-    </header>
+    <div class="custom-cursor"></div>
 
-    <main>
-        <div class="form">
-            <a class="boton" href="/RSSWikiPageCreator" aria-label="Creador de Páginas Wiki">Creador de Páginas Wiki</a>
-            <a class="boton" href="https://github.com/Muhaddil/FiveM-MilageVehicleFailure"
-                aria-label="Sistema de fallos dinámico para vehículos en FiveM">FiveM-MilageVehicleFailure</a>
-            <a class="boton" href="https://github.com/Muhaddil/muhaddil_insurance"
-                aria-label="Sistema de seguro médico en FiveM">Muhaddil Insurance (FiveM)</a>
-            <a class="boton" href="https://github.com/Muhaddil/muhaddil-machines"
-                aria-label="Sistema de seguro médico en FiveM">Muhaddil Machines (FiveM)</a>
-            <a class="boton" href="https://github.com/Muhaddil/muhaddil_billing"
-                aria-label="Sistema de seguro médico en FiveM">Muhaddil Billing (FiveM)</a>
-            <a class="boton" href="https://nmscd.com/NMSGlyphRandomizer/" aria-label="Generador de Glifos NMS">Generador
-                de Glifos para NMS</a>
+    <nav class="container" data-aos="fade-down">
+        <ul>
+            <a href="https://github.com/Muhaddil" target="_blank" aria-label="GitHub">
+                <li><strong>Muhaddil</strong></li>
+            </a>
+        </ul>
+        <ul>
+            <li><a href="#proyectos" class="hover-effect">Proyectos</a></li>
+            <li><a href="#habilidades" class="hover-effect">Habilidades</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 data-aos="zoom-in">Desarrollador</h1>
+            <p class="lead" data-aos="zoom-in" data-aos-delay="200">Creando scripts de FiveM y webs por diversión</p>
+            <div class="social-links">
+                <a href="https://github.com/Muhaddil" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="footer">
-        <p>Visita mi perfil en <a href="https://github.com/Muhaddil" aria-label="Perfil de GitHub">GitHub</a></p>
-    </footer>
+    <section id="proyectos" class="projects-section">
+        <div class="container">
+            <h2 data-aos="fade-right">Proyectos</h2>
+            <div class="projects-grid">
+                <article class="project-card" data-aos="flip-left">
+                    <h3>Creador de Páginas Wiki</h3>
+                    <p>Herramienta automatizada para generación de contenido wiki para la RSS</p>
+                    <div class="tech-stack">
+                        <span class="skill-badge">TypeScript</span>
+                        <br />
+                        <span class="skill-badge">Vue3</span>
+                    </div>
+                    <br />
+                    <a href="https://muhaddil.github.io/RSSWikiPageCreator/" class="button"
+                        style="margin-top: 1rem;">Ver Proyecto</a>
+                </article>
 
-    <script>
+                <article class="project-card" data-aos="flip-left">
+                    <h3>Sistema de Fallos para FiveM</h3>
+                    <p>Mecánica de daño realista para vehículos en servidores FiveM</p>
+                    <div class="tech-stack">
+                        <span class="skill-badge">Lua</span>
+                        <br />
+                        <span class="skill-badge">FiveM</span>
+                    </div>
+                    <br />
+                    <a href="https://github.com/Muhaddil/FiveM-MilageVehicleFailure" class="button"
+                        style="margin-top: 1rem;">Ver en GitHub</a>
+                </article>
 
-        window.addEventListener('load', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const fade = urlParams.get('fade');
+                <article class="project-card" data-aos="flip-left">
+                    <h3>Generador de Glifos NMS</h3>
+                    <p>Herramienta interactiva para fans de No Man's Sky</p>
+                    <br />
+                    <div class="tech-stack">
+                        <span class="skill-badge">JavaScript</span>
+                        <br />
+                        <span class="skill-badge">CSS3</span>
+                    </div>
+                    <br />
+                    <a href="https://nmscd.com/NMSGlyphRandomizer/" class="button" style="margin-top: 1rem;">Usar
+                        Herramienta</a>
+                </article>
+            </div>
+        </div>
+    </section>
 
-            // Longer fade-in effect if fade=true
-            if (fade === 'true') {
+    <section id="habilidades" class="skills-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fab fa-square-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <!-- <div class="skill-progress">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div> -->
+                </div>
+
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fab fa-node"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <!-- <div class="skill-progress">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div> -->
+                </div>
+
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>SQL</h3>
+                    <!-- <div class="skill-progress">
+                        <div class="progress-bar" style="width: 80%"></div>
+                    </div> -->
+                </div>
+
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                    <h3>Vue 3</h3>
+                    <!-- <div class="skill-progress">
+                        <div class="progress-bar" style="width: 88%"></div>
+                    </div> -->
+                </div>
+
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <!-- <div class="skill-progress">
+                        <div class="progress-bar" style="width: 95%"></div>
+                    </div> -->
+                </div>
+
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <!-- <div class="skill-progress">
+                        <div class="progress-bar" style="width: 93%"></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            window.addEventListener('load', () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const fade = urlParams.get('fade');
+
+                if (fade === 'true') {
+                    document.body.classList.add('loaded');
+                    document.body.style.transition = "opacity 2.5s ease-in-out";
+                } else {
+                    document.body.classList.add('loaded');
+                    document.body.style.transition = "opacity 0.5s ease-in-out";
+                }
+            });
+
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out',
+            });
+
+            const cursor = document.querySelector('.custom-cursor');
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.querySelectorAll('a, button, .project-card').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active');
+                });
+                element.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active');
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.add('loaded');
-                document.body.style.transition = "opacity 2.5s ease-in-out"; // Longer fade
-            } else {
-                document.body.classList.add('loaded');
-                document.body.style.transition = "opacity 0.5s ease-in-out"; // Shorter fade
-            }
-        });
-    </script>
+
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            });
+        </script>
 </body>
 
 </html>

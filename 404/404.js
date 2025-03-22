@@ -1,65 +1,59 @@
-// Constants
-const GRADIENT_ANGLE = 150;
-const COLOR_START = "#000";
-const COLOR_END = "#FF0000";
-const INITIAL_PERCENTAGE = 50;
-const MOUSEMOVE_FACTOR = 40;
-const MIN_PERCENTAGE = 30;
-const MAX_PERCENTAGE = 70;
-const PAGE_LOAD_DELAY = 3500;
-const ANIMATION_DURATION = 1600;
-const REDIRECT_URL = "/?fade=true";
-
-// Function to change the gradient
-function changeGradient(x) {
-  const bgWebKit = `linear-gradient(${GRADIENT_ANGLE}deg, ${COLOR_START} ${x}%, ${COLOR_END} ${x + 10}%)`;
-  const bgMoz = `linear-gradient(${GRADIENT_ANGLE}deg, ${COLOR_START} ${x}%, ${COLOR_END} ${x + 10}%)`;
-  document.body.style.backgroundImage = bgWebKit;
-  document.body.style.backgroundImage = bgMoz;
-}
-
-// Changes the gradient on page load
-document.addEventListener("DOMContentLoaded", function () {
-  changeGradient(INITIAL_PERCENTAGE);
+AOS.init({
+  duration: 1000,
+  once: true,
+  easing: 'ease-in-out'
 });
 
-// Changes the gradient with mouse movement
-document.body.addEventListener("mousemove", function (e) {
-    let x = ((e.clientX / window.innerWidth) - 0.5) * MOUSEMOVE_FACTOR; // Mouse position on the X axis
-    x = 50 - x; // Adjusts the center of the gradient
-    x = Math.min(Math.max(x, MIN_PERCENTAGE), MAX_PERCENTAGE); // Limits x to a range of 30 to 70
-    changeGradient(x);
+// Cursor personalizado
+const cursor = document.querySelector('.custom-cursor');
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
 });
 
-// Fade effect duration
-const FADE_DURATION = 1000;
+document.querySelectorAll('a').forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    cursor.classList.add('active');
+  });
+  element.addEventListener('mouseleave', () => {
+    cursor.classList.remove('active');
+  });
+});
 
-// Function to start fade-out
-function startFadeOut() {
-  document.body.style.transition = `opacity ${FADE_DURATION}ms`;
-  document.body.style.opacity = 0;
+// Efecto partículas
+function createParticle(e) {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+
+  const size = Math.random() * 15 + 5;
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+
+  particle.style.left = e.clientX - size / 2 + 'px';
+  particle.style.top = e.clientY - size / 2 + 'px';
+
+  document.body.appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 1000);
 }
 
-// Modify the window loading function
+document.addEventListener('click', createParticle);
+
+// Animación de redirección
 window.onload = function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  
-  // Adjust the fade duration based on the query parameter
-  const fadeDuration = urlParams.get('fade') === 'true' ? 2000 : 1000; // Long fade for 'fade=true', default for 'fade=false'
-
   setTimeout(function () {
     const img = document.querySelector("img");
     img.classList.add("fly-away");
 
-    // Start fading before redirection
     setTimeout(function () {
-      document.body.style.transition = `opacity ${fadeDuration}ms`;
-      startFadeOut();
+      document.body.style.transition = 'opacity 1s ease';
+      document.body.style.opacity = '0';
 
-      // Wait for the fade to complete before redirecting
       setTimeout(function () {
-        window.location.href = REDIRECT_URL; // Redirigir con fade=true
-      }, fadeDuration);
-    }, ANIMATION_DURATION);
-  }, PAGE_LOAD_DELAY);
+        window.location.href = "/?fade=true";
+      }, 1000);
+    }, 2000);
+  }, 4000);
 };
