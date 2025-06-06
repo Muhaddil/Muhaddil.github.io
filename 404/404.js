@@ -41,8 +41,17 @@ function createParticle(e) {
 
 document.addEventListener('click', createParticle);
 
-// Animación de redirección
-window.onload = function () {
+window.addEventListener('load', function () {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0';
+  setTimeout(() => preloader.remove(), 500);
+
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: 'ease-in-out'
+  });
+
   setTimeout(function () {
     const img = document.querySelector("img");
     img.classList.add("fly-away");
@@ -56,4 +65,4 @@ window.onload = function () {
       }, 1000);
     }, 2000);
   }, 4000);
-};
+});
