@@ -20,10 +20,15 @@ body {
   opacity: 0;
   transition: opacity 2.5s ease-in-out;
   overflow-x: hidden;
+  cursor: none !important;
 }
 
 body.loaded {
   opacity: 1;
+}
+
+a, button {
+  cursor: none;
 }
 
 .custom-cursor {
