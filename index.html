@@ -20,19 +20,29 @@
 </head>
 
 <style>
-body {
-  cursor: none;
-}
+    body {
+        cursor: none;
+    }
 
-a,
-i,
-button {
-  cursor: inherit;
-}
+    a,
+    i,
+    button {
+        cursor: inherit;
+    }
 
-#scrollToTop {
-  cursor: inherit;
-}
+    #scrollToTop {
+        cursor: inherit;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            cursor: auto;
+        }
+
+        .custom-cursor {
+            display: none;
+        }
+    }
 </style>
 
 <body>
@@ -283,10 +293,10 @@ button {
                     </a>
                 </article>
 
-                <!-- <article class="project-card scale-in glow-effect">
+                <article class="project-card scale-in glow-effect">
                     <h3>CK Automático</h3>
                     <p>
-                        Sistema que aplica CK automático a jugadores inactivos en
+                        Sistema que aplica CKs automáticos a jugadores inactivos en
                         servidores FiveM.
                     </p>
                     <div class="tech-stack">
@@ -298,7 +308,7 @@ button {
                         <i class="fab fa-github"></i>
                         Ver en GitHub
                     </a>
-                </article> -->
+                </article>
 
                 <article class="project-card scale-in glow-effect">
                     <h3>Randomizador de Enlaces</h3>
@@ -425,6 +435,18 @@ button {
                     </div>
                     <h3>Lua</h3>
                 </div>
+
+                <div class="skill-card fade-in glow-effect">
+                    <div class="skill-icon">
+                        <svg width="40" height="40" viewBox="0 0 128 128" fill="currentColor">
+                            <rect width="128" height="128" fill="#3178c6" />
+                            <text x="64" y="90" font-size="64" text-anchor="middle" fill="#fff"
+                                font-family="Arial, sans-serif">TS</text>
+                        </svg>
+                    </div>
+                    <h3>TypeScript</h3>
+                </div>
+
             </div>
         </div>
     </section>
