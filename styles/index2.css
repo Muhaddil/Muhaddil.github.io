@@ -90,7 +90,7 @@ nav {
   backdrop-filter: var(--blur);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   transform: translateY(-100%);
   animation: slideDown 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
   transition: var(--transition);
@@ -103,14 +103,15 @@ nav {
 .nav-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -119,6 +120,7 @@ nav {
   text-decoration: none;
   transition: var(--transition);
   position: relative;
+  white-space: nowrap;
 }
 
 .logo::after {
@@ -138,19 +140,22 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   list-style: none;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-primary);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   position: relative;
   transition: var(--transition);
   padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
 .nav-links a::before {
@@ -178,11 +183,13 @@ nav {
   transition: var(--transition);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
+  justify-content: center;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   position: relative;
   overflow: hidden;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .theme-toggle::before {
@@ -223,6 +230,7 @@ nav {
     var(--bg-secondary) 100%
   );
   overflow: hidden;
+  padding: 1rem;
 }
 
 .hero::before {
@@ -253,15 +261,16 @@ nav {
 
 .hero-content {
   max-width: 900px;
-  padding: 0 2rem;
+  padding: 0 1rem;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .hero h1 {
-  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 900;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   background: linear-gradient(
     135deg,
     var(--primary) 0%,
@@ -276,17 +285,20 @@ nav {
     fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  padding: 0 0.5rem;
 }
 
 .hero .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   color: var(--text-secondary);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.4s both;
   font-weight: 300;
   letter-spacing: 0.01em;
+  padding: 0 1rem;
+  line-height: 1.4;
 }
 
 .social-links {
@@ -295,24 +307,28 @@ nav {
   animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.8s both;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
 .social-links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
   border-radius: 50%;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   transition: var(--transition-slow);
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .social-links a::before {
@@ -347,27 +363,28 @@ nav {
 }
 
 section {
-  padding: 8rem 0;
+  padding: 4rem 0;
   position: relative;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 800;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   letter-spacing: -0.02em;
+  padding: 0 1rem;
 }
 
 h2::after {
@@ -376,8 +393,8 @@ h2::after {
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
+  width: 60px;
+  height: 3px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   border-radius: 2px;
   animation: expandWidth 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
@@ -385,20 +402,22 @@ h2::after {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: 2rem;
+  width: 100%;
 }
 
 .project-card {
   background: var(--bg-primary);
-  border-radius: 24px;
-  padding: 3rem;
+  border-radius: 20px;
+  padding: 2rem;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
   transition: var(--transition-slow);
   position: relative;
   overflow: hidden;
   backdrop-filter: var(--blur);
+  width: 100%;
 }
 
 .project-card::before {
@@ -427,7 +446,7 @@ h2::after {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   opacity: 0;
   transition: var(--transition);
-  border-radius: 24px;
+  border-radius: 20px;
   z-index: -1;
 }
 
@@ -440,17 +459,18 @@ h2::after {
 }
 
 .project-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-xl);
   border-color: var(--primary);
 }
 
 .project-card h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--text-primary);
   transition: var(--transition);
+  line-height: 1.3;
 }
 
 .project-card:hover h3 {
@@ -459,28 +479,29 @@ h2::after {
 
 .project-card p {
   color: var(--text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.7;
-  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .skill-badge {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .skill-badge::before {
@@ -511,20 +532,23 @@ h2::after {
 .button {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 16px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: var(--transition-slow);
   border: none;
   cursor: none;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow);
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
 }
 
 .button::before {
@@ -555,14 +579,14 @@ h2::after {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1.5rem;
 }
 
 .skill-card {
   background: var(--bg-primary);
-  border-radius: 24px;
-  padding: 3rem 2rem;
+  border-radius: 20px;
+  padding: 2rem 1rem;
   text-align: center;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
@@ -581,7 +605,7 @@ h2::after {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   opacity: 0;
   transition: var(--transition);
-  border-radius: 24px;
+  border-radius: 20px;
 }
 
 .skill-card:hover::before {
@@ -589,21 +613,21 @@ h2::after {
 }
 
 .skill-card:hover {
-  transform: translateY(-15px) scale(1.03);
+  transform: translateY(-8px) scale(1.03);
   box-shadow: var(--shadow-xl);
   border-color: var(--primary);
 }
 
 .skill-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 2rem;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: 24px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
   transition: var(--transition-slow);
   position: relative;
@@ -617,7 +641,6 @@ h2::after {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: linear-gradient(135deg, var(--accent), var(--primary-light)); */
   opacity: 0;
   transition: var(--transition);
 }
@@ -631,7 +654,7 @@ h2::after {
 }
 
 .skill-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
   transition: var(--transition);
@@ -663,32 +686,32 @@ h2::after {
 }
 
 .floating-circle:nth-child(1) {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   top: 10%;
   left: 5%;
   animation-delay: 0s;
 }
 
 .floating-circle:nth-child(2) {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   top: 50%;
   right: 10%;
   animation-delay: 4s;
 }
 
 .floating-circle:nth-child(3) {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   bottom: 20%;
   left: 15%;
   animation-delay: 8s;
 }
 
 .floating-circle:nth-child(4) {
-  width: 150px;
-  height: 150px;
+  width: 80px;
+  height: 80px;
   top: 30%;
   right: 30%;
   animation-delay: 2s;
@@ -699,7 +722,6 @@ h2::after {
     transform: translateY(-100%);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
@@ -711,7 +733,6 @@ h2::after {
     opacity: 0;
     transform: translateY(60px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -723,7 +744,6 @@ h2::after {
   100% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
@@ -734,15 +754,12 @@ h2::after {
   100% {
     transform: translateX(0) translateY(0);
   }
-
   25% {
     transform: translateX(20px) translateY(-20px);
   }
-
   50% {
     transform: translateX(-20px) translateY(20px);
   }
-
   75% {
     transform: translateX(20px) translateY(20px);
   }
@@ -753,13 +770,11 @@ h2::after {
   100% {
     transform: translateY(0px) rotate(0deg);
   }
-
   33% {
-    transform: translateY(-30px) rotate(120deg);
+    transform: translateY(-20px) rotate(120deg);
   }
-
   66% {
-    transform: translateY(15px) rotate(240deg);
+    transform: translateY(10px) rotate(240deg);
   }
 }
 
@@ -767,9 +782,8 @@ h2::after {
   from {
     width: 0;
   }
-
   to {
-    width: 80px;
+    width: 60px;
   }
 }
 
@@ -822,7 +836,6 @@ h2::after {
     opacity: 0;
     transform: translate(-50%, 60px);
   }
-
   to {
     opacity: 1;
     transform: translate(-50%, 0);
@@ -836,7 +849,7 @@ h2::after {
   transform: translate(-50%, 0);
   color: var(--text-muted);
   animation: bounce 2s infinite;
-  font-size: 2rem;
+  font-size: 1.5rem;
   opacity: 0;
   animation: fadeInUpScrollButton 1s cubic-bezier(0.4, 0, 0.2, 1) 2.5s both,
     bounce 2s 3.5s infinite;
@@ -850,59 +863,141 @@ h2::after {
   100% {
     transform: translate(-50%, 0);
   }
-
   40% {
     transform: translate(-50%, -10px);
   }
-
   60% {
     transform: translate(-50%, -5px);
   }
 }
 
+/* Mejoras específicas para móviles */
 @media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+
+  nav {
+    padding: 0.8rem 0;
+  }
+
   .nav-container {
     padding: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
   }
 
   .nav-links {
-    gap: 1.5rem;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
   }
 
   .theme-toggle {
     padding: 0.4rem;
     font-size: 1rem;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 90vh;
+    min-height: 90dvh;
+  }
+
+  .hero-content {
+    padding: 0;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 12vw, 3.5rem);
+    margin-bottom: 1rem;
   }
 
   .hero .subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-bottom: 2rem;
+    line-height: 1.5;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .social-links {
+    gap: 0.8rem;
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+  .social-links a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  section {
+    padding: 3rem 0;
   }
 
   .container {
     padding: 0 1rem;
   }
 
-  section {
-    padding: 5rem 0;
+  h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
 
-  .project-card,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
   .skill-card {
-    padding: 2rem;
+    padding: 1.5rem 0.5rem;
+    border-radius: 16px;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .floating-circle {
+    display: none; /* Mejorar rendimiento en móviles */
   }
 }
 
@@ -911,14 +1006,95 @@ h2::after {
     display: none;
   }
 
-  .social-links {
-    gap: 1rem;
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 14vw, 2.5rem);
   }
 
   .social-links a {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .projects-grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .tech-stack {
+    gap: 0.3rem;
+  }
+
+  .skill-badge {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .project-card:hover,
+  .skill-card:hover,
+  .social-links a:hover,
+  .button:hover {
+    transform: none;
+  }
+
+  .project-card:active,
+  .skill-card:active {
+    transform: scale(0.98);
+  }
+}
+
+@supports (padding: max(0px)) {
+  .nav-container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .hero-content {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
 }
 
@@ -950,7 +1126,6 @@ body.loaded {
   0% {
     transform: translateX(-10%) translateY(-10%) rotate(0deg);
   }
-
   100% {
     transform: translateX(10%) translateY(10%) rotate(360deg);
   }
@@ -988,7 +1163,7 @@ body.loaded {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background: var(--accent-color, #007bff);
+  background: var(--accent);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -999,16 +1174,18 @@ body.loaded {
   justify-content: center;
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transition: var(--transition);
   z-index: 9999;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 #scrollToTop:hover {
   transform: scale(1.1);
-  background: var(--accent-hover, #0056b3);
+  background: var(--accent-light);
 }
 
 #scrollToTop.show {
@@ -1020,5 +1197,12 @@ body.loaded {
   #scrollToTop {
     right: 1rem;
     bottom: 1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .parallax-bg {
+    animation-duration: 60s;
   }
 }
