@@ -174,7 +174,14 @@ nav {
   width: 100%;
 }
 
-.theme-toggle {
+.nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.theme-toggle,
+.style-toggle {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: 50px;
@@ -192,7 +199,8 @@ nav {
   min-height: 44px;
 }
 
-.theme-toggle::before {
+.theme-toggle::before,
+.style-toggle::before {
   content: "";
   position: absolute;
   top: 0;
@@ -208,11 +216,13 @@ nav {
   transition: left 0.6s ease;
 }
 
-.theme-toggle:hover::before {
+.theme-toggle:hover::before,
+.style-toggle:hover::before {
   left: 100%;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.style-toggle:hover {
   border-color: var(--primary);
   transform: scale(1.05);
 }
