@@ -1,0 +1,785 @@
+{
+  "categories": [
+    {
+      "id": "fivem-scripts",
+      "name": "Scripts FiveM",
+      "icon": "fas fa-gamepad",
+      "scripts": [
+        {
+          "id": "mileage-vehicle-failure",
+          "title": "FiveM Vehicle Breakdown Script",
+          "description": "Script dinámico y realista de fallos de vehículos basado en kilometraje recorrido, simulando desgaste real. Altamente configurable, compatible con ESX y QBCore.",
+          "github": "https://github.com/Muhaddil/FiveM-MilageVehicleFailure",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Clona o descarga el repositorio en el directorio de recursos de tu servidor FiveM."
+            },
+            {
+              "type": "code",
+              "language": "bash",
+              "content": "git clone https://github.com/muhaddil/FiveM-MilageVehicleFailure.git"
+            },
+            {
+              "type": "text",
+              "content": "Coloca los archivos del script en tu directorio de recursos del servidor."
+            },
+            {
+              "type": "text",
+              "content": "Añade la siguiente línea a tu archivo server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure FiveM-MilageVehicleFailure"
+            },
+            {
+              "type": "text",
+              "content": "Configura la base de datos. Usa el siguiente SQL para crear la tabla vehicle_kilometers:"
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "content": [
+                "CREATE TABLE IF NOT EXISTS vehicle_kilometers (",
+                "  plate VARCHAR(8) NOT NULL PRIMARY KEY,",
+                "  kilometers DOUBLE NOT NULL DEFAULT 0",
+                ");"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "Edita el archivo config.lua según tus requisitos y reinicia el servidor."
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "El script es altamente configurable. Edita config.lua para personalizar:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Kilometraje que dispara los fallos",
+                "Tipos de fallos habilitados/deshabilitados",
+                "Modo debug para testing",
+                "Compatibilidad con frameworks (ESX/QBCore)"
+              ]
+            }
+          ],
+          "usage": "Los fallos de vehículos se activan automáticamente basándose en los kilómetros recorridos. El sistema simula desgaste real y diferentes tipos de averías según la configuración establecida.",
+          "features": [
+            "Fallo del motor: Apaga completamente el motor del vehículo",
+            "Reventón de neumáticos: Revienta aleatoriamente un neumático",
+            "Pérdida de potencia: Reduce significativamente la potencia del motor",
+            "Pérdida de gasolina: Causa una fuga de combustible",
+            "Fallo de transmisión: Desactiva temporalmente la transmisión",
+            "Drenaje de batería: Drena completamente la batería del vehículo",
+            "Fuga del radiador: Aumenta la temperatura del motor",
+            "Fallo de frenos: Activa los frenos y el freno de mano",
+            "Daño en suspensión: Baja la altura de la suspensión",
+            "Fallo del alternador: Reduce la salud de la batería",
+            "Fuga de fluido de transmisión: Reduce la salud de la transmisión",
+            "Fallo del embrague: Baja la eficiencia del embrague",
+            "Filtro de combustible obstruido: Disminuye el nivel de combustible",
+            "Caída de puerta: Hace que una puerta se caiga aleatoriamente",
+            "Compatible con ESX y QBCore",
+            "Sistema de kilometraje en base de datos SQL",
+            "Modo debug incluido"
+          ],
+          "commands": [],
+          "exports": [],
+          "events": [],
+          "requirements": [
+            "ESX Framework o QBCore Framework para FiveM",
+            "Base de datos SQL para almacenar datos de kilometraje"
+          ]
+        },
+        {
+          "id": "bed-configurator",
+          "title": "Muhaddil Bed Configurator",
+          "description": "Un script simple de FiveM para generar y configurar posiciones de NPCs para animaciones de cama, ideal para scripts de ambulancia.",
+          "github": "https://github.com/Muhaddil/muhaddil_bed_configurator",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Añade la carpeta del recurso al directorio 'resources' de tu servidor."
+            },
+            {
+              "type": "text",
+              "content": "Añade la siguiente línea a tu server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "start muhaddil_bed_configurator"
+            },
+            {
+              "type": "text",
+              "content": "(Opcional) Añade permisos ACE en tu server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "add_ace group.admin bedconfigurator allow # allow all commands"
+            },
+            {
+              "type": "text",
+              "content": "Usa uno de los comandos disponibles en el juego para comenzar a configurar posiciones."
+            },
+            {
+              "type": "text",
+              "content": "Reinicia tu servidor."
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "El configurador genera automáticamente las coordenadas. Usa los comandos en el juego para posicionar NPCs y exportar la configuración."
+            }
+          ],
+          "usage": "Usa los comandos disponibles para configurar posiciones de camas, pagers y más. El NPC seguirá tu cámara automáticamente y podrás ajustar la posición, rotación y altura en tiempo real.",
+          "features": [
+            "Genera NPCs configurables cerca del jugador",
+            "El NPC sigue la posición de la cámara automáticamente",
+            "Rotación con flechas izquierda/derecha o rueda del ratón",
+            "Ajuste de altura con flechas arriba/abajo",
+            "Guardar configuración con Enter",
+            "Cancelar configuración con Esc",
+            "Interfaz React moderna con NUI",
+            "Soporte de localización (múltiples idiomas)",
+            "Sistema de permisos ACE"
+          ],
+          "commands": [
+            {
+              "name": "/configbed",
+              "description": "Inicia la configuración de posiciones de cama",
+              "permission": "bedconfigurator (ACE permission)"
+            },
+            {
+              "name": "/configpager",
+              "description": "Inicia la configuración de posiciones de pager",
+              "permission": "bedconfigurator (ACE permission)"
+            },
+            {
+              "name": "/confighelp",
+              "description": "Muestra mensaje de ayuda con comandos disponibles",
+              "permission": "bedconfigurator (ACE permission)"
+            }
+          ],
+          "exports": [],
+          "events": [],
+          "controls": [
+            "Seguimiento de cámara: El NPC sigue automáticamente donde miras",
+            "Rotar: Flechas Izquierda/Derecha o Rueda del Ratón",
+            "Ajustar altura: Flechas Arriba/Abajo",
+            "Guardar configuración: Enter",
+            "Cancelar configuración: Esc"
+          ]
+        },
+        {
+          "id": "ilegal-medic",
+          "title": "Muhaddil Illegal Medic System",
+          "description": "Sistema simple y altamente configurable de médicos ilegales para servidores FiveM usando ESX. Permite a los jugadores ser revividos o curados por médicos legales e ilegales (NPCs).",
+          "github": "https://github.com/Muhaddil/muhaddil-ilegalmedic",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Descarga o clona este repositorio en la carpeta 'resources' de tu servidor."
+            },
+            {
+              "type": "text",
+              "content": "Asegúrate de que las siguientes dependencias estén iniciadas antes de este recurso en tu server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure ox_lib\nensure ox_target\nensure es_extended\nensure esx_ambulancejob\nensure muhaddil-ilegalmedic"
+            },
+            {
+              "type": "text",
+              "content": "Configura el script según sea necesario editando config.lua"
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "Edita config.lua para personalizar el script:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Config.ReviveInvoice: Precio para revivir/curar legal (dinero o banco)",
+                "Config.ReviveInvoiceIlegal: Precio para revivir/curar ilegal (dinero negro)",
+                "Config.UseProgressBar: Activar/desactivar barra de progreso durante revivir",
+                "Config.EMSJobName: Nombre del trabajo EMS (por defecto: 'ambulance')",
+                "Config.MaxEMS: Número mínimo de EMS en línea para desactivar revivir por NPC",
+                "Config.PedModel: Modelo usado para NPCs médicos",
+                "Config.PedSpawnCheckInterval: Intervalo (ms) para verificar y gestionar NPCs"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "IMPORTANTE: Los NPCs médicos (legales e ilegales) NO se configuran en el archivo config. Debes colocarlos manualmente usando comandos en el juego."
+            }
+          ],
+          "usage": "Los jugadores pueden acercarse a un NPC médico legal o ilegal e interactuar usando el sistema de target (ox_target). Pagar la cantidad requerida (dinero, banco o dinero negro) para ser revivido o curado. Si hay suficientes EMS en línea, los NPCs no ofrecerán servicios de revivir.",
+          "features": [
+            "NPCs médicos legales e ilegales que pueden revivir o curar jugadores",
+            "Precios configurables para servicios legales (dinero/banco) e ilegales (dinero negro)",
+            "Soporte de barra de progreso para revivir inmersivo",
+            "Verificación de EMS (trabajo ambulancia) en línea: si hay suficientes EMS, los NPCs no revivirán",
+            "Logging de Discord webhook para revivires ilegales",
+            "Soporte multi-idioma (Inglés, Español, Francés)",
+            "Fácil configuración para comportamiento y parámetros de NPCs",
+            "Gestión de NPCs mediante comandos de administrador en el juego"
+          ],
+          "commands": [
+            {
+              "name": "/addnpccoords legal [job]",
+              "description": "Añadir un NPC médico legal en tu posición actual",
+              "permission": "admin"
+            },
+            {
+              "name": "/addnpccoords illegal [job]",
+              "description": "Añadir un NPC médico ilegal en tu posición actual",
+              "permission": "admin"
+            },
+            {
+              "name": "/delnpccoords legal",
+              "description": "Abrir menú para eliminar NPCs médicos legales",
+              "permission": "admin"
+            },
+            {
+              "name": "/delnpccoords illegal",
+              "description": "Abrir menú para eliminar NPCs médicos ilegales",
+              "permission": "admin"
+            },
+            {
+              "name": "/listnpccoords",
+              "description": "Imprimir todas las coordenadas de NPCs guardadas (legales e ilegales) en la consola",
+              "permission": "admin"
+            },
+            {
+              "name": "/npccadmin",
+              "description": "Abrir menú de administrador para gestionar NPCs",
+              "permission": "admin"
+            }
+          ],
+          "exports": [],
+          "events": [],
+          "requirements": [
+            "ESX Legacy",
+            "ox_lib",
+            "ox_target",
+            "esx_ambulancejob"
+          ],
+          "discord_webhook": {
+            "description": "Para habilitar el logging de Discord para revivires ilegales, configura tu URL de webhook en server/main.lua",
+            "example": "local webhook = 'YOUR-WEBHOOK-GOES-HERE'"
+          }
+        },
+        {
+          "id": "giveaways",
+          "title": "Muhaddil Giveaways - Sistema de Sorteos FiveM",
+          "description": "Un sistema de sorteos completo y elegante para servidores FiveM con interfaz React moderna, soporte multi-framework y gestión avanzada de premios.",
+          "github": "https://github.com/Muhaddil/muhaddil_giveaways",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Descarga el recurso y colócalo en tu carpeta 'resources'"
+            },
+            {
+              "type": "text",
+              "content": "Importa el archivo SQL (SQL.sql) en tu base de datos"
+            },
+            {
+              "type": "text",
+              "content": "Configura el script en config.lua:"
+            },
+            {
+              "type": "code",
+              "language": "lua",
+              "content": "Config.Framework = 'ESX' -- o 'QB'\nConfig.Inventory = 'ox' -- o 'esx', 'qb'\nConfig.Locale = 'en' -- o 'es'"
+            },
+            {
+              "type": "text",
+              "content": "Inicia el recurso en tu server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure muhaddil_giveaways"
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "Edita config.lua para personalizar:"
+            },
+            {
+              "type": "code",
+              "language": "lua",
+              "content": "Config = {}\n\n-- Sistema de localización\nConfig.Locale = 'es' -- Solo para la UI, 'es' o 'en'\n\n-- Framework (ESX o QB)\nConfig.Framework = 'ESX' -- 'ESX' o 'QB'\nConfig.Inventory = 'ox' -- 'esx', 'qb' o 'ox'\n\n-- Permiso de administrador\nConfig.AdminGroup = 'admin' -- Grupo ESX o permiso QB\n\n-- Sistema de notificaciones\nConfig.Notification = 'ESX' -- 'ESX', 'QB', 'ox_lib', 'custom'\n\n-- Comandos\nConfig.Commands = {\n    admin = 'sorteos', -- Comando para abrir panel de admin\n    participate = 'participar' -- Comando para participar\n}\n\n-- Auto-cerrar sorteos después de X horas (0 = desactivado)\nConfig.AutoCloseHours = 0"
+            }
+          ],
+          "usage": "Los administradores pueden crear sorteos con múltiples premios usando el panel de administración. Los jugadores pueden navegar por sorteos disponibles, ver requisitos de entrada, participar y reclamar premios si ganan.",
+          "features": [
+            "Interfaz React moderna con diseño glassmorphism y animaciones suaves",
+            "Soporte Multi-Framework (ESX y QBCore)",
+            "Múltiples sistemas de inventario (ESX, QBCore y ox_inventory)",
+            "Sistema avanzado de premios con múltiples tipos por sorteo",
+            "Requisitos de entrada (Gratis, Efectivo, Dinero Banco, o Items Específicos)",
+            "Soporte de múltiples ganadores - Configura número de ganadores por sorteo",
+            "Sistema de sorteo automático - Selección automática de ganadores cuando termina",
+            "Sistema de reclamación de premios - Los ganadores pueden reclamar sus premios",
+            "Soporte bilingüe (Inglés y Español)",
+            "Panel de gestión de administrador con operaciones CRUD completas",
+            "Interfaz de participante - Participación fácil para jugadores",
+            "Notificaciones en tiempo real - Toast notifications para todas las acciones",
+            "Diseño responsive - Funciona en todos los tamaños de pantalla"
+          ],
+          "prize_types": [
+            "📦 Items - Cualquier item del juego con cantidades personalizadas",
+            "🚗 Vehículos - Genera vehículos con matrículas personalizadas",
+            "💵 Dinero - Transferencias de efectivo o dinero banco",
+            "🔫 Armas - Armas con munición personalizada"
+          ],
+          "commands": [
+            {
+              "name": "/sorteos",
+              "description": "Abrir panel de administrador (configurable en config.lua)",
+              "permission": "admin"
+            },
+            {
+              "name": "/participar",
+              "description": "Abrir panel de participante (configurable en config.lua)",
+              "permission": "all"
+            }
+          ],
+          "exports": [],
+          "events": [],
+          "requirements": [
+            "ox_lib (requerido) - Biblioteca UI",
+            "oxmysql (requerido) - Base de datos",
+            "ESX Legacy o ESX v1 (opcional, basado en tu framework)",
+            "QBCore Framework (opcional, basado en tu framework)",
+            "ox_inventory (recomendado para gestión de inventario)"
+          ],
+          "admin_features": [
+            "Crear sorteos con múltiples premios",
+            "Editar sorteos existentes antes de abrir",
+            "Gestionar estado de sorteos (Borrador → Abierto → Cerrado → Completado)",
+            "Sortear ganadores manual o automáticamente",
+            "Ver participantes y sus detalles",
+            "Cancelar sorteos si es necesario"
+          ],
+          "participant_features": [
+            "Navegar sorteos disponibles con información detallada",
+            "Ver requisitos de entrada antes de participar",
+            "Seguimiento de participación en pestaña 'Mis Sorteos'",
+            "Reclamar premios si eres ganador",
+            "Actualizaciones en tiempo real del estado del sorteo"
+          ]
+        },
+        {
+          "id": "horror-system",
+          "title": "FiveM Horror System",
+          "description": "Un sistema de experiencia de terror completo para servidores FiveM que añade efectos atmosféricos, jumpscares, susurros, apariciones de fantasmas y más en zonas designadas. (Trabajo en Progreso)",
+          "github": "https://github.com/Muhaddil/muhaddil_horror",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Descarga el recurso"
+            },
+            {
+              "type": "text",
+              "content": "Colócalo en el directorio de recursos de tu servidor"
+            },
+            {
+              "type": "text",
+              "content": "Añade a tu server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure muhaddil_horror"
+            },
+            {
+              "type": "text",
+              "content": "Asegúrate de tener instalada la dependencia 'PolyZone'"
+            },
+            {
+              "type": "text",
+              "content": "Reinicia tu servidor"
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "El sistema es altamente configurable a través del archivo config.lua. Puedes configurar:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Activar/desactivar sistema de horror completo",
+                "Configurar para que solo funcione de noche",
+                "Horas nocturnas (inicio y fin)",
+                "Zonas de horror personalizadas con diferentes formas (poly, box)",
+                "Niveles de intensidad por zona (bajo, medio, alto)",
+                "Probabilidades y cooldowns de eventos",
+                "Tipos de jumpscares, susurros y efectos",
+                "Configuración de sistema de cordura",
+                "Efectos visuales y de audio"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "Permisos ACE (opcional):"
+            },
+            {
+              "type": "code",
+              "content": "add_ace group.admin horrorsystem allow # allow all commands"
+            }
+          ],
+          "usage": "Los jugadores experimentarán efectos de terror al entrar en zonas designadas. La intensidad aumenta cuanto más tiempo permanezcan. Los administradores pueden controlar eventos de terror globales y disparar efectos específicos en jugadores.",
+          "features": [
+            "Zonas de Horror: Cementerio, Bosque Embrujado, Casa Abandonada, Túnel Oscuro predefinidos",
+            "Intensidad basada en zonas (bajo, medio, alto) configurable",
+            "Intensidad progresiva: Los efectos se intensifican cuanto más tiempo permanecen los jugadores",
+            "Indicadores visuales: Elementos UI personalizados al entrar/salir de zonas",
+            "Jumpscares: Apariciones aleatorias de fantasmas, demonios, zombies, sombras y payasos",
+            "Susurros y Sonidos: Efectos de audio 3D direccionales incluyendo susurros, gritos y risas",
+            "Distorsiones Visuales: Estática, desenfoque, aberración cromática y efectos de oscuridad",
+            "Apariciones de Fantasmas: Entidades fantasma hostiles que persiguen jugadores",
+            "Efectos Ambientales: Niebla, truenos, pasos, latidos y sonidos de puertas",
+            "Objetos Paranormales: Objetos flotantes, figuras de sombra y mensajes sangrientos",
+            "Sistema de Cordura: La cordura disminuye en zonas de terror y se recupera al salir",
+            "Medidor de Cordura visual con indicadores de color",
+            "Efectos adicionales con cordura baja",
+            "Sistema de gestión de audio con sonido 3D posicional"
+          ],
+          "commands": [
+            {
+              "name": "/horrorevent [start/stop/status]",
+              "description": "Controlar eventos de terror globales",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorjump [ID/all]",
+              "description": "Disparar jumpscares",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorwhisper [ID/all]",
+              "description": "Disparar susurros",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrordistort [ID/all]",
+              "description": "Disparar distorsiones visuales",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorghost [ID/all]",
+              "description": "Generar entidades fantasma",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorenv [ID/all]",
+              "description": "Disparar efectos ambientales",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorcombo [ID]",
+              "description": "Disparar todos los efectos a la vez",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorimmune [ID]",
+              "description": "Alternar inmunidad del jugador",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrortele [ID] [zone]",
+              "description": "Teletransportar jugador a zona de terror",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorstats [ID]",
+              "description": "Ver estadísticas de terror del jugador",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorreset [ID]",
+              "description": "Resetear estadísticas del jugador",
+              "permission": "admin"
+            },
+            {
+              "name": "/horrorhelp",
+              "description": "Listar todos los comandos",
+              "permission": "admin"
+            }
+          ],
+          "exports": [
+            {
+              "name": "IsInHorrorZone",
+              "description": "Devuelve si el jugador está en una zona de terror",
+              "side": "client"
+            },
+            {
+              "name": "GetCurrentZone",
+              "description": "Devuelve los datos de la zona actual",
+              "side": "client"
+            },
+            {
+              "name": "GetPlayerSanity",
+              "description": "Devuelve el nivel de cordura del jugador",
+              "side": "client"
+            },
+            {
+              "name": "GetIntensity",
+              "description": "Devuelve la intensidad actual",
+              "side": "client"
+            },
+            {
+              "name": "IsImmune",
+              "description": "Devuelve si el jugador es inmune",
+              "side": "client"
+            },
+            {
+              "name": "ForceEvent",
+              "description": "Forzar un evento específico",
+              "side": "client",
+              "usage": "exports['muhaddil_horror']:ForceEvent(eventType)"
+            },
+            {
+              "name": "GetPlayerStats",
+              "description": "Obtener estadísticas del jugador",
+              "side": "server",
+              "usage": "exports['muhaddil_horror']:GetPlayerStats(id)"
+            },
+            {
+              "name": "GetAllStats",
+              "description": "Obtener todas las estadísticas de jugadores",
+              "side": "server"
+            },
+            {
+              "name": "IsGlobalEventActive",
+              "description": "Verificar si el evento global está activo",
+              "side": "server"
+            },
+            {
+              "name": "SetGlobalEvent",
+              "description": "Establecer estado de evento global",
+              "side": "server",
+              "usage": "exports['muhaddil_horror']:SetGlobalEvent(bool)"
+            }
+          ],
+          "events": [],
+          "requirements": ["PolyZone - Para definición de zonas"],
+          "credits": [
+            "Efectos de sonido de Mixkit (https://mixkit.co/)",
+            "Dependencia PolyZone por mkafrin (https://github.com/mkafrin/PolyZone)",
+            "Creado por Muhaddil"
+          ]
+        },
+        {
+          "id": "banking-system",
+          "title": "Sistema Bancario Muhaddil",
+          "description": "Sistema bancario completo para FiveM con múltiples cuentas, préstamos, transferencias y gestión de bancos privados. Compatible con ESX y QBCore.",
+          "github": "https://github.com/Muhaddil/muhaddil-banking",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Coloca 'muhaddil-banking' en tu carpeta 'resources'"
+            },
+            {
+              "type": "text",
+              "content": "Añade a tu server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure muhaddil-banking"
+            },
+            {
+              "type": "text",
+              "content": "La base de datos se crea automáticamente al iniciar (usando install.sql)"
+            },
+            {
+              "type": "text",
+              "content": "Edita config.lua según tus necesidades y reinicia el servidor"
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "Edita config.lua para configurar:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Framework (detecta automáticamente ESX/QBCore)",
+                "Comando para abrir banco (default: '/banco')",
+                "Límites de cuentas por jugador (default: 5)",
+                "Límites de usuarios compartidos por cuenta (default: 5)",
+                "Configuración de préstamos (monto mínimo/máximo, interés, cuotas)",
+                "Precio de compra de bancos",
+                "Límite de bancos por jugador",
+                "Comisiones de transacciones",
+                "Ubicaciones de bancos en el mapa"
+              ]
+            }
+          ],
+          "usage": "Los jugadores pueden acceder al banco acercándose a ubicaciones de banco (marcadores azules) o usando el comando '/banco'. Pueden gestionar múltiples cuentas, realizar transferencias, solicitar préstamos y comprar bancos privados para inversión.",
+          "features": [
+            "Gestión de múltiples cuentas (hasta 5 por jugador)",
+            "Sistema de cuentas compartidas (hasta 5 usuarios por cuenta)",
+            "Sistema completo de préstamos con intereses configurables",
+            "Transferencias entre cuentas por ID de cuenta",
+            "Sistema de compra de bancos privados para inversión",
+            "Comisiones del 1% en transacciones de zona para dueños de bancos",
+            "Pestaña de estadísticas con gráficos de actividad",
+            "4 ubicaciones de bancos predefinidas (Legion Square, Paleto Bay, West LS, Alta)",
+            "Detección automática de framework (ESX/QBCore)",
+            "Compatible con ox_lib para notificaciones y callbacks",
+            "Sistema de base de datos automático con oxmysql",
+            "Interfaz React moderna y responsive",
+            "Historial completo de transacciones",
+            "Sistema de validación y seguridad integrado"
+          ],
+          "commands": [
+            {
+              "name": "/banco",
+              "description": "Abrir menú bancario",
+              "permission": "all"
+            },
+            {
+              "name": "/bankadmin",
+              "description": "Ver top 50 cuentas del servidor",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankinfo [ID cuenta]",
+              "description": "Ver detalles de una cuenta específica",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankloans",
+              "description": "Ver todos los préstamos activos",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankaddmoney [ID cuenta] [monto]",
+              "description": "Añadir dinero a una cuenta",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankremovemoney [ID cuenta] [monto]",
+              "description": "Remover dinero de una cuenta",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankcancelloan [ID préstamo]",
+              "description": "Cancelar un préstamo",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankreset [ID jugador]",
+              "description": "Elimina todas las cuentas y préstamos del jugador",
+              "permission": "admin"
+            }
+          ],
+          "exports": [
+            {
+              "name": "GetAccountBalance",
+              "description": "Obtiene el balance de una cuenta",
+              "usage": "exports['muhaddil-banking']:GetAccountBalance(identifier, accountId)",
+              "side": "server"
+            },
+            {
+              "name": "AddMoney",
+              "description": "Añade dinero a una cuenta",
+              "usage": "exports['muhaddil-banking']:AddMoney(identifier, accountId, amount)",
+              "side": "server"
+            }
+          ],
+          "events": [],
+          "requirements": [
+            "ox_lib - Para notificaciones y callbacks",
+            "oxmysql - Para base de datos",
+            "ESX o QBCore - Framework (detección automática)"
+          ],
+          "loan_system": {
+            "min_amount": 1000,
+            "max_amount": 500000,
+            "interest_rate": "5% fijo",
+            "max_installments": 12,
+            "max_active_loans": 1
+          },
+          "bank_investment": {
+            "price": 1000000,
+            "max_per_player": 3,
+            "commission_rate": "1% de transacciones en zona"
+          }
+        }
+      ]
+    },
+    {
+      "id": "web-tools",
+      "name": "Herramientas Web",
+      "icon": "fas fa-globe",
+      "scripts": [
+        {
+          "id": "wiki-page-creator",
+          "title": "Creador de Páginas Wiki",
+          "description": "Herramienta automatizada para generar contenido wiki en la RSS.",
+          "github": "https://muhaddil.github.io/RSSWikiPageCreator/",
+          "installation": "No requiere instalación. Accede directamente desde el navegador.",
+          "configuration": "No requiere configuración.",
+          "usage": "1. Accede a la herramienta\n2. Completa los campos del formulario\n3. Genera el código wiki\n4. Copia y pega en tu wiki",
+          "features": [
+            "Generación automática de código wiki",
+            "Interfaz intuitiva",
+            "Vista previa en tiempo real",
+            "Exportación de código"
+          ],
+          "commands": [],
+          "exports": [],
+          "events": []
+        },
+        {
+          "id": "matrix-calculator",
+          "title": "Calculadora de Matrices",
+          "description": "Una aplicación web interactiva para realizar operaciones con matrices.",
+          "github": "https://muhaddil.github.io/calculadora-matrices/",
+          "installation": "No requiere instalación. Herramienta web.",
+          "configuration": "No requiere configuración.",
+          "usage": "1. Ingresa las dimensiones de las matrices\n2. Completa los valores\n3. Selecciona la operación deseada\n4. Obtén el resultado",
+          "features": [
+            "Suma y resta de matrices",
+            "Multiplicación de matrices",
+            "Cálculo de determinantes",
+            "Matriz inversa",
+            "Transpuesta"
+          ],
+          "commands": [],
+          "exports": [],
+          "events": []
+        },
+        {
+          "id": "nms-glyph-randomizer",
+          "title": "Generador de Glifos NMS",
+          "description": "Aplicación interactiva para generar combinaciones de glifos en No Man's Sky.",
+          "github": "https://nmscd.com/NMSGlyphRandomizer/",
+          "installation": "No requiere instalación. Herramienta web.",
+          "configuration": "No requiere configuración.",
+          "usage": "1. Haz clic en 'Generar'\n2. Copia los glifos generados\n3. Úsalos en No Man's Sky",
+          "features": [
+            "Generación aleatoria de glifos",
+            "Validación de coordenadas",
+            "Copia rápida al portapapeles",
+            "Interfaz visual de glifos"
+          ],
+          "commands": [],
+          "exports": [],
+          "events": []
+        }
+      ]
+    }
+  ]
+}
