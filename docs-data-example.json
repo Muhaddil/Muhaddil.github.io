@@ -1,0 +1,118 @@
+{
+  "categories": [
+    {
+      "id": "fivem-scripts",
+      "name": "Scripts FiveM",
+      "icon": "fas fa-gamepad",
+      "scripts": [
+        {
+          "id": "mileage-vehicle-failure",
+          "title": "FiveM Vehicle Breakdown Script",
+          "description": "Script dinámico y realista de fallos de vehículos basado en kilometraje recorrido, simulando desgaste real. Altamente configurable, compatible con ESX y QBCore.",
+          "github": "https://github.com/Muhaddil/FiveM-MilageVehicleFailure",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Clona o descarga el repositorio en el directorio de recursos de tu servidor FiveM."
+            },
+            {
+              "type": "code",
+              "language": "bash",
+              "content": "git clone https://github.com/muhaddil/FiveM-MilageVehicleFailure.git"
+            },
+            {
+              "type": "text",
+              "content": "Coloca los archivos del script en tu directorio de recursos del servidor."
+            },
+            {
+              "type": "text",
+              "content": "Añade la siguiente línea a tu archivo server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure FiveM-MilageVehicleFailure"
+            },
+            {
+              "type": "text",
+              "content": "Configura la base de datos. Usa el siguiente SQL para crear la tabla vehicle_kilometers:"
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "content": [
+                "CREATE TABLE IF NOT EXISTS vehicle_kilometers (",
+                "  plate VARCHAR(8) NOT NULL PRIMARY KEY,",
+                "  kilometers DOUBLE NOT NULL DEFAULT 0",
+                ");"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "Edita el archivo config.lua según tus requisitos y reinicia el servidor."
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "El script es altamente configurable. Edita config.lua para personalizar:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Kilometraje que dispara los fallos",
+                "Tipos de fallos habilitados/deshabilitados",
+                "Modo debug para testing",
+                "Compatibilidad con frameworks (ESX/QBCore)"
+              ]
+            }
+          ],
+          "usage": "Los fallos de vehículos se activan automáticamente basándose en los kilómetros recorridos. El sistema simula desgaste real y diferentes tipos de averías según la configuración establecida.",
+          "features": [
+            "Fallo del motor: Apaga completamente el motor del vehículo",
+            "Reventón de neumáticos: Revienta aleatoriamente un neumático",
+            "Pérdida de potencia: Reduce significativamente la potencia del motor",
+            "Pérdida de gasolina: Causa una fuga de combustible",
+            "Fallo de transmisión: Desactiva temporalmente la transmisión",
+            "Drenaje de batería: Drena completamente la batería del vehículo",
+            "Fuga del radiador: Aumenta la temperatura del motor",
+            "Fallo de frenos: Activa los frenos y el freno de mano",
+            "Daño en suspensión: Baja la altura de la suspensión",
+            "Fallo del alternador: Reduce la salud de la batería",
+            "Fuga de fluido de transmisión: Reduce la salud de la transmisión",
+            "Fallo del embrague: Baja la eficiencia del embrague",
+            "Filtro de combustible obstruido: Disminuye el nivel de combustible",
+            "Caída de puerta: Hace que una puerta se caiga aleatoriamente",
+            "Compatible con ESX y QBCore",
+            "Sistema de kilometraje en base de datos SQL",
+            "Modo debug incluido"
+          ],
+          "commands": [],
+          "exports": [
+            {
+              "name": "GetVehicleMileage",
+              "description": "Obtiene el kilometraje de un vehículo",
+              "side": "server",
+              "usage": "Consultar el README del repositorio para detalles de implementación",
+              "params": [
+                {
+                  "name": "vehicle",
+                  "type": "entity",
+                  "description": "La entidad del vehículo"
+                }
+              ],
+              "return": {
+                "type": "number",
+                "description": "El kilometraje actual del vehículo"
+              }
+            }
+          ],
+          "events": [],
+          "requirements": [
+            "ESX Framework o QBCore Framework para FiveM",
+            "Base de datos SQL para almacenar datos de kilometraje"
+          ]
+        }
+      ]
+    }
+  ]
+}
