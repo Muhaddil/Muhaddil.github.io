@@ -1,0 +1,282 @@
+[
+  {
+    "title": { "es": "Creador de Páginas Wiki", "en": "Wiki Page Creator" },
+    "description": {
+      "es": "Herramienta automatizada para generar contenido wiki en la RSS.",
+      "en": "Automated tool to generate wiki content for RSS."
+    },
+    "stack": ["TypeScript", "Vue3"],
+    "link": "https://muhaddil.github.io/RSSWikiPageCreator/",
+    "linkText": { "es": "Ver Proyecto", "en": "View Project" },
+    "icon": "fas fa-external-link-alt"
+  },
+  {
+    "title": { "es": "Calculadora de Matrices", "en": "Matrix Calculator" },
+    "description": {
+      "es": "Una aplicación web interactiva para realizar operaciones con matrices, desarrollada con React, TypeScript y Vite.",
+      "en": "An interactive web application to perform matrix operations, developed with React, TypeScript, and Vite."
+    },
+    "stack": ["TypeScript", "React"],
+    "link": "https://muhaddil.github.io/calculadora-matrices/",
+    "linkText": { "es": "Ver Proyecto", "en": "View Project" },
+    "icon": "fas fa-external-link-alt"
+  },
+  {
+    "title": {
+      "es": "Sistema de Fallos para FiveM",
+      "en": "FiveM Failure System"
+    },
+    "description": {
+      "es": "Mecánica que simula desgaste y fallos realistas en vehículos dentro de servidores FiveM.",
+      "en": "Mechanic that simulates realistic wear and tear and failures on vehicles within FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/FiveM-MilageVehicleFailure",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Generador de Glifos NMS", "en": "NMS Glyph Generator" },
+    "description": {
+      "es": "Aplicación interactiva para generar combinaciones de glifos en No Man's Sky.",
+      "en": "Interactive application to generate glyph combinations in No Man's Sky."
+    },
+    "stack": ["JavaScript", "CSS3"],
+    "link": "https://nmscd.com/NMSGlyphRandomizer/",
+    "linkText": { "es": "Usar Herramienta", "en": "Use Tool" },
+    "icon": "fas fa-tools"
+  },
+  {
+    "title": { "es": "Sistema de Formularios", "en": "Form System" },
+    "description": {
+      "es": "Plataforma ligera para crear, enviar y gestionar formularios personalizados.",
+      "en": "Lightweight platform to create, send, and manage custom forms."
+    },
+    "stack": ["Vue3", "SCSS"],
+    "link": "#",
+    "linkId": "form-random-link",
+    "linkText": { "es": "Ver Herramienta", "en": "View Tool" },
+    "icon": "fas fa-tools"
+  },
+  {
+    "title": { "es": "Configurador de Camas", "en": "Bed Configurator" },
+    "description": {
+      "es": "Herramienta para configurar camas y posiciones en servidores FiveM.",
+      "en": "Tool to configure beds and positions on FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_bed_configurator",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Medic Ilegal", "en": "Illegal Medic System" },
+    "description": {
+      "es": "Script para añadir un sistema configurable de médicos ilegales en FiveM con ESX.",
+      "en": "Script to add a configurable illegal medic system in FiveM with ESX."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil-ilegalmedic",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Sorteos", "en": "Giveaway System" },
+    "description": {
+      "es": "Un sistema de sorteos completo y elegante para servidores FiveM con una interfaz de usuario moderna, soporte para múltiples frameworks y gestión avanzada de premios.",
+      "en": "A complete and elegant giveaway system for FiveM servers with a modern UI, multi-framework support, and advanced prize management."
+    },
+    "stack": ["Lua", "React", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_giveaways",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Horror", "en": "Horror System" },
+    "description": {
+      "es": "Script para añadir un sistema de horror para FiveM con una extensa configuración y con un sistema añadido de \"Caza de Calabazas\" con recompensas por calabazas recolectadas.",
+      "en": "Script to add a horror system for FiveM with extensive configuration and an added \"Pumpkin Hunt\" system with rewards."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_horror",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Máquinas", "en": "Vending Machine System" },
+    "description": {
+      "es": "Recurso para mejorar la experiencia de rol con máquinas interactivas en FiveM.",
+      "en": "Resource to improve roleplay experience with interactive machines in FiveM."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil-machines",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema OBD", "en": "OBD System" },
+    "description": {
+      "es": "Recurso que añade diagnósticos OBD para el script JG-Mechanic en servidores FiveM.",
+      "en": "Resource adding OBD diagnostics for the JG-Mechanic script in FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_obd",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Lavado de Dinero", "en": "Money Wash System" },
+    "description": {
+      "es": "Script para añadir lavado de dinero configurable mediante ESX en FiveM.",
+      "en": "Script to add configurable money washing via ESX in FiveM."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil-moneywash",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": {
+      "es": "Sistema de Enfermedades (WIP)",
+      "en": "Disease System (WIP)"
+    },
+    "description": {
+      "es": "Script para simular enfermedades con síntomas y contagios en servidores FiveM.",
+      "en": "Script to simulate diseases with symptoms and contagion in FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_infections",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Robos", "en": "Robbery System" },
+    "description": {
+      "es": "Script para gestionar solicitudes y disponibilidad de robos en servidores FiveM.",
+      "en": "Script to manage robbery requests and availability in FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_robberydispo",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Seguros", "en": "Insurance System" },
+    "description": {
+      "es": "Recurso para permitir a los jugadores comprar seguros médicos a NPCs en FiveM.",
+      "en": "Resource to allow players to buy medical insurance from NPCs in FiveM."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_insurance",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "CK Automático", "en": "Automatic CK" },
+    "description": {
+      "es": "Sistema que aplica CKs automáticos a jugadores inactivos en servidores FiveM.",
+      "en": "System that applies automatic CKs to inactive players in FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_automaticCK",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Randomizador de Enlaces", "en": "Link Randomizer" },
+    "description": {
+      "es": "Aplicación web que genera enlaces aleatorios para recursos de GTAV RP.",
+      "en": "Web application that generates random links for GTAV RP resources."
+    },
+    "stack": ["JavaScript", "Vue3"],
+    "link": "https://github.com/Muhaddil/simple-link-randomizer",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Facturación", "en": "Billing System" },
+    "description": {
+      "es": "Script para gestionar facturas en servidores FiveM.",
+      "en": "Script to manage invoices in FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_billing",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Página Web SAED", "en": "SAED Web Page" },
+    "description": {
+      "es": "Sitio web desarrollado con Quasar (Vue) para la SAED.",
+      "en": "Website developed with Quasar (Vue) for SAED."
+    },
+    "stack": ["Vue3", "Quasar"],
+    "link": "https://github.com/Muhaddil/saed-web-page",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": {
+      "es": "Sistema de Robos NPC (WIP)",
+      "en": "NPC Robbery System (WIP)"
+    },
+    "description": {
+      "es": "Script para añadir interacciones y robos a NPCs en servidores FiveM.",
+      "en": "Script to add interactions and robberies to NPCs in FiveM servers."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil-NPCrob",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": {
+      "es": "Sistema de Ambulancias NPC",
+      "en": "NPC Ambulance System"
+    },
+    "description": {
+      "es": "Script para añadir ambulancias automáticas (NPC) en servidores de FiveM cuando no hay médicos disponibles.",
+      "en": "Script to add automatic ambulances (NPC) in FiveM servers when no medics are available."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil_aidoctor",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Devoluciones", "en": "Refund System" },
+    "description": {
+      "es": "Este script permite a los administradores gestionar compras de jugadores, devolver artículos y más a través de un panel NUI intuitivo.",
+      "en": "This script allows admins to manage player purchases, refund items, and more via an intuitive NUI panel."
+    },
+    "stack": ["Lua", "FiveM"],
+    "link": "https://github.com/Muhaddil/muhaddil-devolutions",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": {
+      "es": "Sistema de Garajes Policiales",
+      "en": "Police Garage System"
+    },
+    "description": {
+      "es": "Un sistema de garajes policiales para servidores FiveM, compatible con múltiples frameworks y que ofrece una amplia personalización de vehículos, ubicaciones y restricciones laborales.",
+      "en": "A police garage system for FiveM servers, compatible with multiple frameworks, offering extensive vehicle, location, and job restriction customization."
+    },
+    "stack": ["Lua", "HTML"],
+    "link": "https://github.com/Muhaddil/muhaddil-policegarage",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  },
+  {
+    "title": { "es": "Sistema de Bancos", "en": "Banking System" },
+    "description": {
+      "es": "Sistema bancario completo para FiveM con múltiples cuentas, préstamos, transferencias y gestión de bancos privados.",
+      "en": "Complete banking system for FiveM with multiple accounts, loans, transfers, and private bank management."
+    },
+    "stack": ["Lua", "React"],
+    "link": "https://github.com/Muhaddil/muhaddil-banking",
+    "linkText": { "es": "Ver en GitHub", "en": "View on GitHub" },
+    "icon": "fab fa-github"
+  }
+]

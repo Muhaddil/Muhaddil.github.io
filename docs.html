@@ -55,6 +55,29 @@
         font-weight: bold;
         display: block;
     }
+
+    .lang-toggle {
+        display: flex;
+        gap: 5px;
+        margin: 0 10px;
+    }
+
+    .lang-btn {
+        background: transparent;
+        border: 1px solid var(--text-color);
+        color: var(--text-color);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
 </style>
 
 <body>
@@ -71,8 +94,13 @@
             <div class="nav-actions">
                 <div class="search-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="docs-search" placeholder="Buscar documentación...">
+                    <input type="text" id="docs-search" placeholder="Buscar documentación..."
+                        data-i18n="docs.searchPlaceholder">
                     <div class="search-results" id="search-results"></div>
+                </div>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
                 </div>
                 <button class="theme-toggle" onclick="toggleTheme()">
                     <i class="fas fa-sun" id="theme-icon"></i>
@@ -90,14 +118,14 @@
 
         <main class="docs-content">
             <div id="content-area">
-                <div id="docs-warning" class="docs-warning">
+                <div id="docs-warning" class="docs-warning" data-i18n="docs.warning">
                     ⚠️ La documentación se está generando. Algunas secciones pueden no estar completas.
                 </div>
 
-                <!-- Documentation content will be injected here -->
                 <div class="welcome-message">
-                    <h1>Bienvenido a la Documentación</h1>
-                    <p>Selecciona un script del menú lateral para ver su documentación detallada.</p>
+                    <h1 data-i18n="docs.welcomeTitle">Bienvenido a la Documentación</h1>
+                    <p data-i18n="docs.welcomeText">Selecciona un script del menú lateral para ver su documentación
+                        detallada.</p>
                 </div>
             </div>
         </main>
@@ -188,12 +216,23 @@
 
         async function loadDocs() {
             try {
-                const response = await fetch('docs-data.json');
+                const lang = localStorage.getItem('lang') || 'es';
+                const response = await fetch(`data/docs-${lang}.json`);
+                if (!response.ok) throw new Error('Not found');
                 docsData = await response.json();
                 renderSidebar();
                 handleHashChange();
             } catch (error) {
                 console.error('Error loading documentation:', error);
+                if (localStorage.getItem('lang') !== 'es') {
+                    try {
+                        const response = await fetch(`data/docs-es.json`);
+                        docsData = await response.json();
+                        renderSidebar();
+                        handleHashChange();
+                        return;
+                    } catch (e) { }
+                }
                 document.getElementById('content-area').innerHTML = '<p>Error cargando la documentación.</p>';
             }
         }
@@ -294,11 +333,14 @@
                 <div class="doc-header fade-in visible">
                     <h1>${script.title}</h1>
                     <p class="doc-description">${script.description}</p>
-                    ${script.github ? `<a href="${script.github}" target="_blank" class="button"><i class="fab fa-github"></i> Ver en GitHub</a>` : ''}
+                    ${script.github ? `
+<a href="${script.github}" target="_blank" class="button">
+<i class="fab fa-github"></i> ${i18n.t('buttons.viewGithub')}
+</a>` : ''}
                 </div>
 
                 <div class="doc-section fade-in visible">
-                    <h2><i class="fas fa-star"></i> Características</h2>
+                    <h2><i class="fas fa-star"></i> ${i18n.t('docs.sections.features')}</h2>
                     <ul class="features-list">
                         ${script.features.map(f => `<li>${f}</li>`).join('')}
                     </ul>
@@ -308,7 +350,7 @@
             if (script.installation) {
                 html += `
                     <div class="doc-section fade-in visible">
-                        <h2 id="section-installation"><i class="fas fa-download"></i> Instalación</h2>
+                        <h2 id="section-installation"><i class="fas fa-download"></i> ${i18n.t('docs.sections.installation')}</h2>
                         ${renderContent(script.installation)}
                     </div>
                 `;
@@ -317,7 +359,7 @@
             if (script.configuration) {
                 html += `
                     <div class="doc-section fade-in visible">
-                        <h2><i class="fas fa-cog"></i> Configuración</h2>
+                        <h2><i class="fas fa-cog"></i> ${i18n.t('docs.sections.configuration')}</h2>
                         ${renderContent(script.configuration)}
                     </div>
                 `;
@@ -326,7 +368,7 @@
             if (script.usage) {
                 html += `
                     <div class="doc-section fade-in visible">
-                        <h2><i class="fas fa-book"></i> Uso</h2>
+                        <h2><i class="fas fa-book"></i> ${i18n.t('docs.sections.usage')}</h2>
                         <p>${script.usage}</p>
                     </div>
                 `;
@@ -335,14 +377,14 @@
             if (script.commands && script.commands.length > 0) {
                 html += `
                     <div class="doc-section fade-in visible">
-                        <h2><i class="fas fa-terminal"></i> Comandos</h2>
+                        <h2><i class="fas fa-terminal"></i> ${i18n.t('docs.sections.commands')}</h2>
                         <div class="table-container">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Comando</th>
-                                        <th>Descripción</th>
-                                        <th>Permiso</th>
+                                        <th>${i18n.t('docs.sections.commands.command')}</th>
+                                        <th>${i18n.t('docs.sections.commands.description')}</th>
+                                        <th>${i18n.t('docs.sections.commands.permission')}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -546,6 +588,7 @@
             loadDocs();
         });
     </script>
+    <script src="js/localization.js"></script>
     <script>hljs.highlightAll();</script>
 </body>
 
