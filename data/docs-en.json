@@ -1,0 +1,180 @@
+{
+  "categories": [
+    {
+      "id": "fivem-scripts",
+      "name": "FiveM Scripts",
+      "icon": "fas fa-gamepad",
+      "scripts": [
+        {
+          "id": "mileage-vehicle-failure",
+          "title": "FiveM Vehicle Breakdown Script",
+          "description": "Dynamic and realistic vehicle failure script based on driven mileage, simulating real wear and tear. Highly configurable, compatible with ESX and QBCore.",
+          "github": "https://github.com/Muhaddil/FiveM-MilageVehicleFailure",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Clone or download the repository into your FiveM server resources directory."
+            },
+            {
+              "type": "code",
+              "language": "bash",
+              "content": "git clone https://github.com/muhaddil/FiveM-MilageVehicleFailure.git"
+            },
+            {
+              "type": "text",
+              "content": "Place the script files into your server resources directory."
+            },
+            {
+              "type": "text",
+              "content": "Add the following line to your server.cfg file:"
+            },
+            {
+              "type": "code",
+              "content": "ensure FiveM-MilageVehicleFailure"
+            },
+            {
+              "type": "text",
+              "content": "Configure the database. Use the following SQL to create the vehicle_kilometers table:"
+            },
+            {
+              "type": "code",
+              "language": "sql",
+              "content": [
+                "CREATE TABLE IF NOT EXISTS vehicle_kilometers (",
+                "  plate VARCHAR(8) NOT NULL PRIMARY KEY,",
+                "  kilometers DOUBLE NOT NULL DEFAULT 0",
+                ");"
+              ]
+            },
+            {
+              "type": "text",
+              "content": "Edit the config.lua file according to your needs and restart the server."
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "The script is highly configurable. Edit config.lua to customize:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Mileage thresholds that trigger failures",
+                "Enabled/disabled failure types",
+                "Debug mode for testing",
+                "Framework compatibility (ESX/QBCore)"
+              ]
+            }
+          ],
+          "usage": "Vehicle failures are triggered automatically based on driven kilometers. The system simulates real wear and different types of breakdowns depending on the configuration.",
+          "features": [
+            "Engine failure: Completely shuts down the vehicle engine",
+            "Tire blowout: Randomly bursts a tire",
+            "Power loss: Significantly reduces engine power",
+            "Fuel leak: Causes a fuel leak",
+            "Transmission failure: Temporarily disables the transmission",
+            "Battery drain: Completely drains the vehicle battery",
+            "Radiator leak: Increases engine temperature",
+            "Brake failure: Activates brakes and handbrake",
+            "Suspension damage: Lowers suspension height",
+            "Alternator failure: Reduces battery health",
+            "Transmission fluid leak: Reduces transmission health",
+            "Clutch failure: Lowers clutch efficiency",
+            "Clogged fuel filter: Decreases fuel level",
+            "Door detachment: Randomly causes a door to fall off",
+            "Compatible with ESX and QBCore",
+            "SQL-based mileage tracking system",
+            "Debug mode included"
+          ],
+          "commands": [],
+          "exports": [],
+          "events": [],
+          "requirements": [
+            "ESX Framework or QBCore Framework for FiveM",
+            "SQL database to store mileage data"
+          ]
+        },
+        {
+          "id": "bed-configurator",
+          "title": "Muhaddil Bed Configurator",
+          "description": "A simple FiveM script to generate and configure NPC positions for bed animations, ideal for ambulance scripts.",
+          "github": "https://github.com/Muhaddil/muhaddil_bed_configurator",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Add the resource folder to your server's 'resources' directory."
+            },
+            {
+              "type": "text",
+              "content": "Add the following line to your server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "start muhaddil_bed_configurator"
+            },
+            {
+              "type": "text",
+              "content": "(Optional) Add ACE permissions in your server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "add_ace group.admin bedconfigurator allow # allow all commands"
+            },
+            {
+              "type": "text",
+              "content": "Use one of the available in-game commands to start configuring positions."
+            },
+            {
+              "type": "text",
+              "content": "Restart your server."
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "The configurator automatically generates coordinates. Use in-game commands to position NPCs and export the configuration."
+            }
+          ],
+          "usage": "Use the available commands to configure bed positions, pagers, and more. The NPC will automatically follow your camera and you can adjust position, rotation, and height in real time.",
+          "features": [
+            "Generates configurable NPCs near the player",
+            "NPC automatically follows camera position",
+            "Rotation with left/right arrows or mouse wheel",
+            "Height adjustment with up/down arrows",
+            "Save configuration with Enter",
+            "Cancel configuration with Esc",
+            "Modern React UI with NUI",
+            "Localization support (multiple languages)",
+            "ACE permission system"
+          ],
+          "commands": [
+            {
+              "name": "/configbed",
+              "description": "Start bed position configuration",
+              "permission": "bedconfigurator (ACE permission)"
+            },
+            {
+              "name": "/configpager",
+              "description": "Start pager position configuration",
+              "permission": "bedconfigurator (ACE permission)"
+            },
+            {
+              "name": "/confighelp",
+              "description": "Show help message with available commands",
+              "permission": "bedconfigurator (ACE permission)"
+            }
+          ],
+          "exports": [],
+          "events": [],
+          "controls": [
+            "Camera tracking: NPC follows where you look",
+            "Rotate: Left/Right arrows or Mouse Wheel",
+            "Adjust height: Up/Down arrows",
+            "Save configuration: Enter",
+            "Cancel configuration: Esc"
+          ]
+        }
+      ]
+    }
+  ]
+}

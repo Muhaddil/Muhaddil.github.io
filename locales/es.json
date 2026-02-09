@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "docs": "Documentación"
+  },
+  "hero": {
+    "title": "Desarrollador",
+    "subtitle": "Creando scripts de FiveM y sitios web por diversión"
+  },
+  "sections": {
+    "projects": "Proyectos",
+    "skills": "Habilidades técnicas"
+  },
+  "buttons": {
+    "viewProject": "Ver proyecto",
+    "viewGithub": "Ver en GitHub",
+    "useTool": "Usar herramienta",
+    "viewTool": "Ver herramienta"
+  },
+  "docs": {
+    "sections": {
+      "features": "Características",
+      "installation": "Instalación",
+      "configuration": "Configuración",
+      "usage": "Uso",
+      "commands": "Comandos",
+      "exports": "Exports",
+      "parameters": "Parámetros",
+      "returns": "Retorna"
+    },
+    "search": {
+      "script": "Script",
+      "export": "Export",
+      "command": "Comando",
+      "section": "Sección"
+    },
+    "errors": {
+      "loadFailed": "Error al cargar la documentación."
+    }
+  }
+}
