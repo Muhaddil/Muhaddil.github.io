@@ -48,7 +48,12 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
@@ -69,8 +74,10 @@ body {
   mix-blend-mode: difference;
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
   will-change: transform;
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.15s ease, opacity 0.15s ease;
+  transition:
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .custom-cursor.active {
@@ -101,7 +108,7 @@ nav {
 }
 
 .nav-container {
-  max-width: 1400px;
+  max-width: 85%;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
@@ -250,7 +257,8 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(99, 102, 241, 0.1) 0%,
       transparent 50%
@@ -291,7 +299,8 @@ nav {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 200% 200%;
-  animation: gradientShift 4s ease-in-out infinite,
+  animation:
+    gradientShift 4s ease-in-out infinite,
     fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -861,7 +870,8 @@ h2::after {
   animation: bounce 2s infinite;
   font-size: 1.5rem;
   opacity: 0;
-  animation: fadeInUpScrollButton 1s cubic-bezier(0.4, 0, 0.2, 1) 2.5s both,
+  animation:
+    fadeInUpScrollButton 1s cubic-bezier(0.4, 0, 0.2, 1) 2.5s both,
     bounce 2s 3.5s infinite;
 }
 
@@ -1118,7 +1128,8 @@ body.loaded {
   left: 0;
   width: 120%;
   height: 120%;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 25% 25%,
       rgba(99, 102, 241, 0.1) 0%,
       transparent 50%
