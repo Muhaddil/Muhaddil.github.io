@@ -1,5 +1,6 @@
 {
   "nav": {
+    "about": "About me",
     "projects": "Projects",
     "skills": "Skills",
     "docs": "Documentation"
@@ -9,8 +10,21 @@
     "subtitle": "Creating FiveM scripts and websites for fun"
   },
   "sections": {
+    "about": "About me",
     "projects": "Projects",
     "skills": "Technical Skills"
+  },
+  "about": {
+    "role": "Developer",
+    "p1": "I'm a developer focused on creating web applications and custom systems for multiplayer environments like FiveM. I specialize in designing modular and configurable tools that enhance the user experience within online communities. I work with client-server architectures, resource optimization, and adaptation to existing frameworks. While programming isn't my primary field of study, I'm committed to continuous self-directed learning, expanding my knowledge and applying best development practices to every project.",
+    "p2": "In addition to my technical side, I have a strong community involvement. I develop and publish resources for role-playing servers, focusing on scalability and reusability. I also manage the <a href='https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki' target='_blank' rel='noopener noreferrer'>No Man's Sky wiki</a> in Spanish and English, where I organize, structure, and document content for the community.",
+    "p3": "My profile combines a tool-creator mindset, a structural systems vision, and a commitment to digital communities. I don't just develop functionalities; I build solutions designed to be used, maintained, and scaled by others.",
+    "stats": {
+      "experience": "Years Exp.",
+      "projects": "Projects",
+      "specialty": "Specialty"
+    },
+    "specialty_value": "FiveM & Web"
   },
   "buttons": {
     "viewProject": "View Project",

@@ -1,4 +1,8 @@
-let currentLang = localStorage.getItem('lang') || 'es';
+const browserLang = navigator.language?.split('-')[0];
+const supportedLangs = ['es', 'en'];
+const defaultLang = supportedLangs.includes(browserLang) ? browserLang : 'es';
+
+let currentLang = localStorage.getItem('lang') || defaultLang;
 let translations = {};
 
 async function loadTranslations(lang) {
@@ -8,11 +12,9 @@ async function loadTranslations(lang) {
         updateTranslations();
         updateActiveLangButton(lang);
         document.documentElement.lang = lang;
-
         if (typeof loadDocs === 'function' && window.location.pathname.includes('docs.html')) {
             loadDocs();
         }
-
     } catch (error) {
         console.error('Error loading translations:', error);
     }
@@ -24,12 +26,13 @@ window.updateTranslations = function () {
         if (Object.keys(translations).length === 0) return;
 
         const value = getNestedTranslation(translations, key);
-        if (value) {
-            if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
-                element.placeholder = value;
-            } else {
-                element.textContent = value;
-            }
+        if (!value) return;
+        if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+            element.placeholder = value;
+        } else if (element.hasAttribute('data-i18n-html')) {
+            element.innerHTML = value;
+        } else {
+            element.textContent = value;
         }
     });
 };
@@ -49,21 +52,14 @@ function setLanguage(lang) {
 
 function updateActiveLangButton(lang) {
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.dataset.lang === lang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
+        btn.classList.toggle('active', btn.dataset.lang === lang);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     loadTranslations(currentLang);
-
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            setLanguage(btn.dataset.lang);
-        });
+        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 });
 

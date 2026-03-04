@@ -214,12 +214,10 @@ nav {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(99, 102, 241, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(99, 102, 241, 0.1),
+      transparent);
   transition: left 0.6s ease;
 }
 
@@ -241,11 +239,9 @@ nav {
   justify-content: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--bg-primary) 0%,
-    var(--bg-secondary) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--bg-primary) 0%,
+      var(--bg-secondary) 100%);
   overflow: hidden;
   padding: 1rem;
 }
@@ -258,21 +254,15 @@ nav {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(
-      circle at 20% 80%,
+    radial-gradient(circle at 20% 80%,
       rgba(99, 102, 241, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
+      transparent 50%),
+    radial-gradient(circle at 80% 20%,
       rgba(139, 92, 246, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
+      transparent 50%),
+    radial-gradient(circle at 40% 40%,
       rgba(6, 182, 212, 0.05) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   pointer-events: none;
   animation: backgroundShift 20s ease-in-out infinite;
 }
@@ -289,12 +279,10 @@ nav {
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 900;
   margin-bottom: 1.5rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--accent) 50%,
-    var(--primary-light) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--primary) 0%,
+      var(--accent) 50%,
+      var(--primary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -419,6 +407,123 @@ h2::after {
   animation: expandWidth 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
 }
 
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-profile {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem !important;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 4px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.profile-role {
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.about-profile .social-links {
+  margin-top: auto;
+  opacity: 1;
+  transform: none;
+  animation: none;
+  padding: 0;
+}
+
+.about-info {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  text-align: center;
+  background: var(--bg-secondary);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-card p {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
@@ -446,12 +551,10 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(99, 102, 241, 0.08),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(99, 102, 241, 0.08),
+      transparent);
   transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -530,12 +633,10 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
   transition: left 0.6s ease;
 }
 
@@ -577,12 +678,10 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -696,11 +795,9 @@ h2::after {
 .floating-circle {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    rgba(99, 102, 241, 0.1),
-    rgba(6, 182, 212, 0.05)
-  );
+  background: linear-gradient(135deg,
+      rgba(99, 102, 241, 0.1),
+      rgba(6, 182, 212, 0.05));
   animation: float 12s ease-in-out infinite;
 }
 
@@ -741,6 +838,7 @@ h2::after {
     transform: translateY(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -752,6 +850,7 @@ h2::after {
     opacity: 0;
     transform: translateY(60px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -759,39 +858,48 @@ h2::after {
 }
 
 @keyframes gradientShift {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
 }
 
 @keyframes backgroundShift {
+
   0%,
   100% {
     transform: translateX(0) translateY(0);
   }
+
   25% {
     transform: translateX(20px) translateY(-20px);
   }
+
   50% {
     transform: translateX(-20px) translateY(20px);
   }
+
   75% {
     transform: translateX(20px) translateY(20px);
   }
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   33% {
     transform: translateY(-20px) rotate(120deg);
   }
+
   66% {
     transform: translateY(10px) rotate(240deg);
   }
@@ -801,6 +909,7 @@ h2::after {
   from {
     width: 0;
   }
+
   to {
     width: 60px;
   }
@@ -855,6 +964,7 @@ h2::after {
     opacity: 0;
     transform: translate(-50%, 60px);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, 0);
@@ -876,6 +986,7 @@ h2::after {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -883,15 +994,16 @@ h2::after {
   100% {
     transform: translate(-50%, 0);
   }
+
   40% {
     transform: translate(-50%, -10px);
   }
+
   60% {
     transform: translate(-50%, -5px);
   }
 }
 
-/* Mejoras específicas para móviles */
 @media (max-width: 768px) {
   body {
     cursor: auto;
@@ -1017,7 +1129,7 @@ h2::after {
   }
 
   .floating-circle {
-    display: none; /* Mejorar rendimiento en móviles */
+    display: none;
   }
 }
 
@@ -1088,6 +1200,7 @@ h2::after {
 }
 
 @media (hover: none) and (pointer: coarse) {
+
   .project-card:hover,
   .skill-card:hover,
   .social-links a:hover,
@@ -1129,16 +1242,12 @@ body.loaded {
   width: 120%;
   height: 120%;
   background:
-    radial-gradient(
-      circle at 25% 25%,
+    radial-gradient(circle at 25% 25%,
       rgba(99, 102, 241, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 75% 75%,
+      transparent 50%),
+    radial-gradient(circle at 75% 75%,
       rgba(139, 92, 246, 0.1) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   animation: parallaxMove 30s linear infinite;
   z-index: -2;
 }
@@ -1147,6 +1256,7 @@ body.loaded {
   0% {
     transform: translateX(-10%) translateY(-10%) rotate(0deg);
   }
+
   100% {
     transform: translateX(10%) translateY(10%) rotate(360deg);
   }
@@ -1163,12 +1273,10 @@ body.loaded {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--accent),
-    var(--primary-light)
-  );
+  background: linear-gradient(135deg,
+      var(--primary),
+      var(--accent),
+      var(--primary-light));
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
