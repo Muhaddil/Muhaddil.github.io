@@ -1,6 +1,6 @@
 [
   {
-    "title": { "es": "Creador de Páginas Wiki", "en": "Wiki Page Creator" },
+    "title": { "es": "Creador de Páginas Wiki (EOL)", "en": "Wiki Page Creator (EOL)" },
     "description": {
       "es": "Herramienta automatizada para generar contenido wiki en la RSS.",
       "en": "Automated tool to generate wiki content for RSS."
