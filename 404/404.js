@@ -17,7 +17,7 @@ function getContentFor404() {
     match || {
       title: "404 - No encontrado",
       message:
-        "Lo sentimos, esta página tiene problemas y se está trabajando para solucionarlos.",
+        "Lo sentimos, esta página no existe.",
       buttonText: "Regresar al Menú Principal",
       buttonHref: "/",
     }
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (content.extra) {
     const extraP = document.createElement("p");
     extraP.innerHTML = content.extra;
+    extraP.className = 'extra-info';
     extraP.setAttribute("data-aos", "fade-up");
     document.querySelector("p").after(extraP);
   }
