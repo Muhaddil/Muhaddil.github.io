@@ -214,10 +214,12 @@ nav {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(99, 102, 241, 0.1),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -239,9 +241,11 @@ nav {
   justify-content: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(135deg,
-      var(--bg-primary) 0%,
-      var(--bg-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
   overflow: hidden;
   padding: 1rem;
 }
@@ -254,15 +258,21 @@ nav {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 20% 80%,
+    radial-gradient(
+      circle at 20% 80%,
       rgba(99, 102, 241, 0.1) 0%,
-      transparent 50%),
-    radial-gradient(circle at 80% 20%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
       rgba(139, 92, 246, 0.1) 0%,
-      transparent 50%),
-    radial-gradient(circle at 40% 40%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
       rgba(6, 182, 212, 0.05) 0%,
-      transparent 50%);
+      transparent 50%
+    );
   pointer-events: none;
   animation: backgroundShift 20s ease-in-out infinite;
 }
@@ -279,10 +289,12 @@ nav {
   font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: 900;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg,
-      var(--primary) 0%,
-      var(--accent) 50%,
-      var(--primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--accent) 50%,
+    var(--primary-light) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -523,7 +535,6 @@ h2::after {
   }
 }
 
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
@@ -551,10 +562,12 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(99, 102, 241, 0.08),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.08),
+    transparent
+  );
   transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -633,10 +646,12 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -678,10 +693,12 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -795,9 +812,11 @@ h2::after {
 .floating-circle {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg,
-      rgba(99, 102, 241, 0.1),
-      rgba(6, 182, 212, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1),
+    rgba(6, 182, 212, 0.05)
+  );
   animation: float 12s ease-in-out infinite;
 }
 
@@ -858,7 +877,6 @@ h2::after {
 }
 
 @keyframes gradientShift {
-
   0%,
   100% {
     background-position: 0% 50%;
@@ -870,7 +888,6 @@ h2::after {
 }
 
 @keyframes backgroundShift {
-
   0%,
   100% {
     transform: translateX(0) translateY(0);
@@ -890,7 +907,6 @@ h2::after {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
@@ -986,7 +1002,6 @@ h2::after {
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -1018,8 +1033,24 @@ h2::after {
   }
 
   .nav-container {
-    padding: 0 1rem;
+    max-width: 100%;
+    padding: 0 0.75rem;
     gap: 0.5rem;
+  }
+
+  .nav-actions {
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle,
+  .style-toggle {
+    min-width: 38px;
+    min-height: 38px;
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+    padding: 0.3rem;
   }
 
   .logo {
@@ -1200,7 +1231,6 @@ h2::after {
 }
 
 @media (hover: none) and (pointer: coarse) {
-
   .project-card:hover,
   .skill-card:hover,
   .social-links a:hover,
@@ -1242,12 +1272,16 @@ body.loaded {
   width: 120%;
   height: 120%;
   background:
-    radial-gradient(circle at 25% 25%,
+    radial-gradient(
+      circle at 25% 25%,
       rgba(99, 102, 241, 0.1) 0%,
-      transparent 50%),
-    radial-gradient(circle at 75% 75%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
       rgba(139, 92, 246, 0.1) 0%,
-      transparent 50%);
+      transparent 50%
+    );
   animation: parallaxMove 30s linear infinite;
   z-index: -2;
 }
@@ -1273,10 +1307,12 @@ body.loaded {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--accent),
-      var(--primary-light));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--primary-light)
+  );
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
@@ -1306,7 +1342,11 @@ body.loaded {
   box-shadow: var(--shadow-lg);
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition);
+  transform: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
   z-index: 9999;
   min-width: 44px;
   min-height: 44px;
@@ -1320,6 +1360,7 @@ body.loaded {
 #scrollToTop.show {
   opacity: 1;
   visibility: visible;
+  transform: none;
 }
 
 @media (max-width: 768px) {

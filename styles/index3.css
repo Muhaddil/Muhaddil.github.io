@@ -101,7 +101,6 @@ body {
 }
 
 @keyframes float-particle {
-
   0%,
   100% {
     transform: translate(0, 0) rotate(0deg);
@@ -130,20 +129,25 @@ body {
   height: 200%;
   z-index: -2;
   background:
-    radial-gradient(circle at 20% 30%,
+    radial-gradient(
+      circle at 20% 30%,
       rgba(99, 102, 241, 0.15) 0%,
-      transparent 50%),
-    radial-gradient(circle at 80% 70%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
       rgba(236, 72, 153, 0.15) 0%,
-      transparent 50%),
-    radial-gradient(circle at 50% 50%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
       rgba(6, 182, 212, 0.1) 0%,
-      transparent 50%);
+      transparent 50%
+    );
   animation: gradient-shift 15s ease infinite;
 }
 
 @keyframes gradient-shift {
-
   0%,
   100% {
     transform: translate(0, 0) rotate(0deg);
@@ -199,10 +203,12 @@ nav {
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--accent),
-      var(--accent-pink));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--accent-pink)
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -213,7 +219,6 @@ nav {
 }
 
 @keyframes gradient-flow {
-
   0%,
   100% {
     background-position: 0% 50%;
@@ -312,11 +317,13 @@ nav {
   font-size: clamp(3rem, 12vw, 8rem);
   font-weight: 900;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--accent),
-      var(--accent-pink),
-      var(--primary-light));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--accent-pink),
+    var(--primary-light)
+  );
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -330,7 +337,6 @@ nav {
 }
 
 @keyframes hero-gradient {
-
   0%,
   100% {
     background-position: 0% 50%;
@@ -439,7 +445,6 @@ nav {
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -473,10 +478,12 @@ h2 {
   font-weight: 900;
   text-align: center;
   margin-bottom: 5rem;
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--accent),
-      var(--accent-pink));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--accent-pink)
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -618,7 +625,6 @@ h2::after {
   }
 }
 
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -648,10 +654,12 @@ h2::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--accent),
-      var(--accent-pink));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--accent-pink)
+  );
   opacity: 0;
   transition: opacity 0.5s ease;
   border-radius: 25px;
@@ -664,10 +672,12 @@ h2::after {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transform: rotate(45deg);
   transition: all 0.6s ease;
 }
@@ -732,10 +742,12 @@ h2::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -826,9 +838,11 @@ h2::after {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle,
-      rgba(99, 102, 241, 0.1) 0%,
-      transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.1) 0%,
+    transparent 70%
+  );
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -901,26 +915,31 @@ h2::after {
 
 #scrollToTop {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 60px;
-  height: 60px;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  border: none;
-  border-radius: 50%;
   color: white;
-  font-size: 1.5rem;
-  cursor: none;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
   z-index: 999;
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
 #scrollToTop.show {
   opacity: 1;
   visibility: visible;
+  transform: none;
 }
 
 #scrollToTop:hover {
@@ -1006,5 +1025,36 @@ h2::after {
   .project-card:hover,
   .skill-card:hover {
     transform: translateY(-10px) scale(1.02);
+  }
+
+  .nav-container {
+    max-width: 100%;
+    padding: 0 0.75rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle,
+  .style-toggle {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .lang-toggle {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .lang-btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
   }
 }
