@@ -7,7 +7,7 @@ function getContentFor404() {
       match: "/rsswikipagecreator",
       title: "404 - EOL",
       message:
-        "Este proyecto llegó a su fin de vida (EOL) y ya no está disponible.",
+        "Este proyecto llegó a su fin de vida (EOL) por problemas con dependencias requeridas y ya no está disponible.",
       extra:
         'Si buscas poder seguir subiendo tus descubrimientos, puedes usar la <a href="https://wiki.nmscd.com/?ref=nmscd">herramienta pública del NMSCD</a>.',
       buttonText: "Regresar al Menú Principal",
