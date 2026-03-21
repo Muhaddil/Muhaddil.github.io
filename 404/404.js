@@ -1,10 +1,48 @@
+function getContentFor404() {
+  const path = window.location.pathname.toLowerCase();
+
+  const routes = [
+    {
+      match: '/rsswikipagecreator',
+      title: '404 - EOL',
+      message: 'Este proyecto llegó a su fin de vida (EOL) y ya no está disponible.',
+      extra: 'Si buscas poder seguir subiendo tus descubrimientos, puedes usar la <a href="https://wiki.nmscd.com/?ref=nmscd">herramienta pública del NMSCD</a>.',
+      buttonText: 'Regresar al Menú Principal',
+      buttonHref: '/'
+    },
+  ];
+
+  const match = routes.find(r => path.startsWith(r.match));
+
+  return match || {
+    title: '404 - No encontrado',
+    message: 'Lo sentimos, esta página tiene problemas y se está trabajando para solucionarlos.',
+    buttonText: 'Regresar al Menú Principal',
+    buttonHref: '/'
+  };
+}
+
+const content = getContentFor404();
+document.querySelector('h1').textContent = content.title;
+document.querySelector('p').textContent = content.message;
+
+if (content.extra) {
+  const extraP = document.createElement('p');
+  extraP.innerHTML = content.extra;  
+  extraP.setAttribute('data-aos', 'fade-up');
+  document.querySelector('p').after(extraP);
+}
+
+const boton = document.querySelector('.boton');
+boton.textContent = content.buttonText;
+boton.href = content.buttonHref;
+
 AOS.init({
   duration: 1000,
   once: true,
   easing: 'ease-in-out'
 });
 
-// Cursor personalizado
 const cursor = document.querySelector('.custom-cursor');
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = e.clientX + 'px';
@@ -20,7 +58,6 @@ document.querySelectorAll('a').forEach(element => {
   });
 });
 
-// Efecto partículas
 function createParticle(e) {
   const particle = document.createElement('div');
   particle.className = 'particle';
