@@ -1,3 +1,5 @@
+const REDIRECT_DELAY = 10000; 
+
 function getContentFor404() {
   const path = window.location.pathname.toLowerCase();
   const routes = [
@@ -79,5 +81,5 @@ window.addEventListener("load", function () {
         window.location.href = "/?fade=true";
       }, 1000);
     }, 2000);
-  }, 4000);
+  }, REDIRECT_DELAY);
 });
