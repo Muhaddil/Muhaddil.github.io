@@ -22,6 +22,17 @@
     "icon": "fas fa-external-link-alt"
   },
   {
+    "title": { "es": "Muhaddil horarios", "en": "Muhaddil schedules" },
+    "description": {
+      "es": "Una aplicación web moderna y flexible para la gestión de horarios, actividades y turnos.",
+      "en": "A modern and flexible web application for managing schedules, activities, and shifts."
+    },
+    "stack": ["TypeScript", "React"],
+    "link": "https://muhaddil.github.io/muhaddil-horarios/",
+    "linkText": { "es": "Ver Proyecto", "en": "View Project" },
+    "icon": "fas fa-external-link-alt"
+  },
+  {
     "title": {
       "es": "Sistema de Fallos para FiveM",
       "en": "FiveM Failure System"
