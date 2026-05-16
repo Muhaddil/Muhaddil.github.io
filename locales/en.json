@@ -38,7 +38,12 @@
       "installation": "Installation",
       "configuration": "Configuration",
       "usage": "Usage",
-      "commands": "Commands",
+      "commands": {
+        "title": "Commands",
+        "command": "Command",
+        "description": "Description",
+        "permission": "Permission"
+      },
       "exports": "Exports",
       "parameters": "Parameters",
       "returns": "Returns"
@@ -51,6 +56,10 @@
     },
     "errors": {
       "loadFailed": "Error loading documentation."
-    }
+    },
+    "warning": "⚠️ Documentation is being generated. Some sections may not be complete.",
+    "welcomeTitle": "Welcome to the Documentation",
+    "welcomeText": "Select a script from the sidebar to view its detailed documentation.",
+    "searchPlaceholder": "Search documentation..."
   }
 }

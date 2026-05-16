@@ -173,6 +173,337 @@
             "Save configuration: Enter",
             "Cancel configuration: Esc"
           ]
+        },
+        {
+          "id": "banking-system",
+          "title": "Muhaddil Banking System",
+          "description": "Comprehensive banking system for FiveM with multiple accounts, loans, transfers, and private bank management. Compatible with ESX and QBCore.",
+          "github": "https://github.com/Muhaddil/muhaddil-banking",
+          "installation": [
+            {
+              "type": "text",
+              "content": "Place 'muhaddil-banking' in your 'resources' folder."
+            },
+            {
+              "type": "text",
+              "content": "Add the following to your server.cfg:"
+            },
+            {
+              "type": "code",
+              "content": "ensure muhaddil-banking"
+            },
+            {
+              "type": "text",
+              "content": "The database will be created automatically on startup (using install.sql)."
+            },
+            {
+              "type": "text",
+              "content": "Edit config.lua according to your needs and restart the server."
+            }
+          ],
+          "configuration": [
+            {
+              "type": "text",
+              "content": "Edit config.lua to configure:"
+            },
+            {
+              "type": "list",
+              "content": [
+                "Framework (automatically detects ESX/QBCore)",
+                "Command to open bank (default: '/banco')",
+                "Account limits per player (default: 5)",
+                "Shared user limits per account (default: 5)",
+                "Loan configuration (min/max amount, interest, installments)",
+                "Bank purchase prices",
+                "Bank limits per player",
+                "Transaction commissions",
+                "Bank locations on the map"
+              ]
+            }
+          ],
+          "usage": "Players can access the bank by approaching bank locations (blue markers) or using the '/banco' command. They can manage multiple accounts, perform transfers, request loans, and buy private banks for investment.",
+          "features": [
+            "Multiple account management (up to 5 per player)",
+            "Shared account system (up to 5 users per account)",
+            "Full loan system with configurable interest rates",
+            "Transfers between accounts by account ID",
+            "Private bank purchase system for investment",
+            "1% commission on zone transactions for bank owners",
+            "Statistics tab with activity charts",
+            "4 predefined bank locations (Legion Square, Paleto Bay, West LS, Alta)",
+            "Automatic framework detection (ESX/QBCore)",
+            "Compatible with ox_lib for notifications and callbacks",
+            "Automatic database system with oxmysql",
+            "Modern and responsive React interface",
+            "Full transaction history",
+            "Integrated validation and security system"
+          ],
+          "commands": [
+            {
+              "name": "/banco",
+              "description": "Open banking menu",
+              "permission": "all"
+            },
+            {
+              "name": "/bankadmin",
+              "description": "View top 50 server accounts",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankinfo [accountId]",
+              "description": "View details of a specific account",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankloans",
+              "description": "View all active loans",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankaddmoney [accountId] [amount]",
+              "description": "Add money to an account",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankremovemoney [accountId] [amount]",
+              "description": "Remove money from an account",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankcancelloan [loanId]",
+              "description": "Cancel a loan",
+              "permission": "admin"
+            },
+            {
+              "name": "/bankreset [playerId]",
+              "description": "Deletes all accounts and loans for a player",
+              "permission": "admin"
+            }
+          ],
+          "exports": [
+            {
+              "name": "Transfer",
+              "description": "Triggers a transfer between accounts.",
+              "usage": "exports['muhaddil-banking']:Transfer(source, fromId, toId, amount, bankLocation)",
+              "side": "server"
+            },
+            {
+              "name": "GetTotalBankBalance",
+              "description": "Returns total balance across all accounts for a player.",
+              "usage": "exports['muhaddil-banking']:GetTotalBankBalance(identifier)",
+              "side": "server"
+            },
+            {
+              "name": "AddMoneyToAccount",
+              "description": "Programmatically add funds to an account.",
+              "usage": "exports['muhaddil-banking']:AddMoneyToAccount(accountId, amount, reason)",
+              "side": "server"
+            },
+            {
+              "name": "RemoveMoneyFromAccount",
+              "description": "Programmatically remove funds from an account.",
+              "usage": "exports['muhaddil-banking']:RemoveMoneyFromAccount(accountId, amount, reason)",
+              "side": "server"
+            },
+            {
+              "name": "SyncFrameworkBank",
+              "description": "Forces a balance synchronization with the active framework.",
+              "usage": "exports['muhaddil-banking']:SyncFrameworkBank(playerId)",
+              "side": "server"
+            },
+            {
+              "name": "ResolveAccountId",
+              "description": "Resolves an IBAN or numeric ID to an account ID.",
+              "usage": "exports['muhaddil-banking']:ResolveAccountId(input)",
+              "side": "server"
+            },
+            {
+              "name": "HasCard",
+              "description": "Returns whether the player has at least one bank card.",
+              "usage": "exports['muhaddil-banking']:HasCard(source)",
+              "side": "server"
+            },
+            {
+              "name": "GetPlayerCards",
+              "description": "Returns a list of all cards owned by the player.",
+              "usage": "exports['muhaddil-banking']:GetPlayerCards(source)",
+              "side": "server"
+            },
+            {
+              "name": "CreateCard",
+              "description": "Generates a new physical card for an account.",
+              "usage": "exports['muhaddil-banking']:CreateCard(source, accountId, pin)",
+              "side": "server"
+            },
+            {
+              "name": "ToggleCardBlock",
+              "description": "Blocks or unblocks a specific bank card.",
+              "usage": "exports['muhaddil-banking']:ToggleCardBlock(source, cardId, block)",
+              "side": "server"
+            },
+            {
+              "name": "ChangeCardPin",
+              "description": "Updates the PIN for a card.",
+              "usage": "exports['muhaddil-banking']:ChangeCardPin(source, cardId, currentPin, newPin)",
+              "side": "server"
+            },
+            {
+              "name": "DeleteCard",
+              "description": "Permanently removes a card.",
+              "usage": "exports['muhaddil-banking']:DeleteCard(source, cardId)",
+              "side": "server"
+            },
+            {
+              "name": "GetBankDetails",
+              "description": "Returns ownership and configuration details of a bank.",
+              "usage": "exports['muhaddil-banking']:GetBankDetails(source, bankId)",
+              "side": "server"
+            },
+            {
+              "name": "UpdateBankCommission",
+              "description": "Updates the transaction commission for a bank.",
+              "usage": "exports['muhaddil-banking']:UpdateBankCommission(source, bankId, newRate)",
+              "side": "server"
+            },
+            {
+              "name": "WithdrawBankEarnings",
+              "description": "Withdraws the accumulated profit from a bank.",
+              "usage": "exports['muhaddil-banking']:WithdrawBankEarnings(source, bankId)",
+              "side": "server"
+            },
+            {
+              "name": "SellBank",
+              "description": "Sells the bank ownership.",
+              "usage": "exports['muhaddil-banking']:SellBank(source, bankId)",
+              "side": "server"
+            },
+            {
+              "name": "TransferBank",
+              "description": "Transfers ownership to another player.",
+              "usage": "exports['muhaddil-banking']:TransferBank(source, bankId, targetPlayerId)",
+              "side": "server"
+            },
+            {
+              "name": "RegisterDirectDebit",
+              "description": "Sets up a recurring payment.",
+              "usage": "exports['muhaddil-banking']:RegisterDirectDebit(identifier, accountId, creditor, amount, frequency)",
+              "side": "server"
+            },
+            {
+              "name": "CancelDirectDebitById",
+              "description": "Cancels an active direct debit.",
+              "usage": "exports['muhaddil-banking']:CancelDirectDebitById(debitId)",
+              "side": "server"
+            },
+            {
+              "name": "GetPlayerCreditScore",
+              "description": "Returns the current credit score for a player.",
+              "usage": "exports['muhaddil-banking']:GetPlayerCreditScore(identifier)",
+              "side": "server"
+            },
+            {
+              "name": "GetTopAccounts",
+              "description": "Returns a list of the richest accounts.",
+              "usage": "exports['muhaddil-banking']:GetTopAccounts(limit)",
+              "side": "server"
+            },
+            {
+              "name": "GetActiveLoans",
+              "description": "Returns all currently active loans in the server.",
+              "usage": "exports['muhaddil-banking']:GetActiveLoans()",
+              "side": "server"
+            },
+            {
+              "name": "CancelLoan",
+              "description": "Administratively cancels a loan.",
+              "usage": "exports['muhaddil-banking']:CancelLoan(loanId)",
+              "side": "server"
+            },
+            {
+              "name": "GetAccountInfo",
+              "description": "Returns full administrative details of an account.",
+              "usage": "exports['muhaddil-banking']:GetAccountInfo(accountId)",
+              "side": "server"
+            },
+            {
+              "name": "ResetPlayerBank",
+              "description": "Completely resets all banking data for a player.",
+              "usage": "exports['muhaddil-banking']:ResetPlayerBank(identifier)",
+              "side": "server"
+            },
+            {
+              "name": "OpenBankById",
+              "description": "Opens the banking UI for a specific bank location.",
+              "usage": "exports['muhaddil-banking']:OpenBankById(bankId)",
+              "side": "client"
+            },
+            {
+              "name": "OpenNearestBank",
+              "description": "Opens the UI for the closest bank location.",
+              "usage": "exports['muhaddil-banking']:OpenNearestBank()",
+              "side": "client"
+            },
+            {
+              "name": "CloseBank",
+              "description": "Closes the banking UI.",
+              "usage": "exports['muhaddil-banking']:CloseBank()",
+              "side": "client"
+            },
+            {
+              "name": "IsBankOpen",
+              "description": "Returns whether the banking UI is currently open.",
+              "usage": "exports['muhaddil-banking']:IsBankOpen()",
+              "side": "client"
+            },
+            {
+              "name": "GetCurrentBank",
+              "description": "Returns information about the currently open bank location.",
+              "usage": "exports['muhaddil-banking']:GetCurrentBank()",
+              "side": "client"
+            },
+            {
+              "name": "OpenATM",
+              "description": "Opens the ATM interface.",
+              "usage": "exports['muhaddil-banking']:OpenATM()",
+              "side": "client"
+            },
+            {
+              "name": "IsATMOpen",
+              "description": "Returns whether the ATM interface is open.",
+              "usage": "exports['muhaddil-banking']:IsATMOpen()",
+              "side": "client"
+            },
+            {
+              "name": "useCheck",
+              "description": "Triggers the logic for using a physical check.",
+              "usage": "exports['muhaddil-banking']:useCheck(data)",
+              "side": "client"
+            },
+            {
+              "name": "HasStolenCard",
+              "description": "Checks if the player is carrying a reported stolen card.",
+              "usage": "exports['muhaddil-banking']:HasStolenCard()",
+              "side": "client"
+            }
+          ],
+          "events": [],
+          "requirements": [
+            "ox_lib - For notifications and callbacks",
+            "oxmysql - For database",
+            "ESX or QBCore - Framework (automatic detection)"
+          ],
+          "loan_system": {
+            "min_amount": 1000,
+            "max_amount": 500000,
+            "interest_rate": "5% fixed",
+            "max_installments": 12,
+            "max_active_loans": 1
+          },
+          "bank_investment": {
+            "price": 1000000,
+            "max_per_player": 3,
+            "commission_rate": "1% of transactions in zone"
+          }
         }
       ]
     }
