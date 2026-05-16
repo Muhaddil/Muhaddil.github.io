@@ -38,7 +38,12 @@
       "installation": "Instalación",
       "configuration": "Configuración",
       "usage": "Uso",
-      "commands": "Comandos",
+      "commands": {
+        "title": "Comandos",
+        "command": "Comando",
+        "description": "Descripción",
+        "permission": "Permiso"
+      },
       "exports": "Exports",
       "parameters": "Parámetros",
       "returns": "Retorna"
@@ -51,6 +56,10 @@
     },
     "errors": {
       "loadFailed": "Error al cargar la documentación."
-    }
+    },
+    "warning": "⚠️ La documentación se está generando. Algunas secciones pueden no estar completas.",
+    "welcomeTitle": "Bienvenido a la Documentación",
+    "welcomeText": "Selecciona un script del menú lateral para ver su documentación detallada.",
+    "searchPlaceholder": "Buscar documentación..."
   }
 }

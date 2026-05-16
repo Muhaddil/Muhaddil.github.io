@@ -377,7 +377,7 @@
             if (script.commands && script.commands.length > 0) {
                 html += `
                     <div class="doc-section fade-in visible">
-                        <h2><i class="fas fa-terminal"></i> ${i18n.t('docs.sections.commands')}</h2>
+                        <h2><i class="fas fa-terminal"></i> ${i18n.t('docs.sections.commands.title')}</h2>
                         <div class="table-container">
                             <table>
                                 <thead>
@@ -405,7 +405,7 @@
             if (script.exports && script.exports.length > 0) {
                 html += `
                     <div class="doc-section fade-in visible">
-                        <h2><i class="fas fa-code"></i> Exports</h2>
+                        <h2><i class="fas fa-code"></i> ${i18n.t('docs.sections.exports')}</h2>
                         ${script.exports.map(exp => `
                             <div class="export-item" id="export-${exp.name}">
                                 <div class="export-header">
@@ -422,7 +422,7 @@
 
                                 ${exp.params && exp.params.length > 0 ? `
                                     <div class="export-params">
-                                        <h4>Parámetros</h4>
+                                        <h4>${i18n.t('docs.sections.parameters')}</h4>
                                         <ul>
                                             ${exp.params.map(param => `
                                                 <li>
@@ -437,7 +437,7 @@
 
                                 ${exp.return ? `
                                     <div class="export-return">
-                                        <h4>Retorna</h4>
+                                        <h4>${i18n.t('docs.sections.returns')}</h4>
                                         <div class="return-content">
                                             <span class="param-type">${exp.return.type}</span>
                                             <span class="param-desc">${exp.return.description}</span>

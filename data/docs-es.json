@@ -686,16 +686,208 @@
           ],
           "exports": [
             {
-              "name": "GetAccountBalance",
-              "description": "Obtiene el balance de una cuenta",
-              "usage": "exports['muhaddil-banking']:GetAccountBalance(identifier, accountId)",
+              "name": "Transfer",
+              "description": "Inicia una transferencia entre cuentas.",
+              "usage": "exports['muhaddil-banking']:Transfer(source, fromId, toId, amount, bankLocation)",
               "side": "server"
             },
             {
-              "name": "AddMoney",
-              "description": "Añade dinero a una cuenta",
-              "usage": "exports['muhaddil-banking']:AddMoney(identifier, accountId, amount)",
+              "name": "GetTotalBankBalance",
+              "description": "Devuelve el balance total de todas las cuentas de un jugador.",
+              "usage": "exports['muhaddil-banking']:GetTotalBankBalance(identifier)",
               "side": "server"
+            },
+            {
+              "name": "AddMoneyToAccount",
+              "description": "Añade fondos a una cuenta mediante programación.",
+              "usage": "exports['muhaddil-banking']:AddMoneyToAccount(accountId, amount, reason)",
+              "side": "server"
+            },
+            {
+              "name": "RemoveMoneyFromAccount",
+              "description": "Elimina fondos de una cuenta mediante programación.",
+              "usage": "exports['muhaddil-banking']:RemoveMoneyFromAccount(accountId, amount, reason)",
+              "side": "server"
+            },
+            {
+              "name": "SyncFrameworkBank",
+              "description": "Fuerza una sincronización de balance con el framework activo.",
+              "usage": "exports['muhaddil-banking']:SyncFrameworkBank(playerId)",
+              "side": "server"
+            },
+            {
+              "name": "ResolveAccountId",
+              "description": "Resuelve un IBAN o ID numérico a un ID de cuenta.",
+              "usage": "exports['muhaddil-banking']:ResolveAccountId(input)",
+              "side": "server"
+            },
+            {
+              "name": "HasCard",
+              "description": "Devuelve si el jugador tiene al menos una tarjeta bancaria.",
+              "usage": "exports['muhaddil-banking']:HasCard(source)",
+              "side": "server"
+            },
+            {
+              "name": "GetPlayerCards",
+              "description": "Devuelve una lista de todas las tarjetas del jugador.",
+              "usage": "exports['muhaddil-banking']:GetPlayerCards(source)",
+              "side": "server"
+            },
+            {
+              "name": "CreateCard",
+              "description": "Genera una nueva tarjeta física para una cuenta.",
+              "usage": "exports['muhaddil-banking']:CreateCard(source, accountId, pin)",
+              "side": "server"
+            },
+            {
+              "name": "ToggleCardBlock",
+              "description": "Bloquea o desbloquea una tarjeta específica.",
+              "usage": "exports['muhaddil-banking']:ToggleCardBlock(source, cardId, block)",
+              "side": "server"
+            },
+            {
+              "name": "ChangeCardPin",
+              "description": "Actualiza el PIN de una tarjeta.",
+              "usage": "exports['muhaddil-banking']:ChangeCardPin(source, cardId, currentPin, newPin)",
+              "side": "server"
+            },
+            {
+              "name": "DeleteCard",
+              "description": "Elimina permanentemente una tarjeta.",
+              "usage": "exports['muhaddil-banking']:DeleteCard(source, cardId)",
+              "side": "server"
+            },
+            {
+              "name": "GetBankDetails",
+              "description": "Devuelve detalles de propiedad y configuración de un banco.",
+              "usage": "exports['muhaddil-banking']:GetBankDetails(source, bankId)",
+              "side": "server"
+            },
+            {
+              "name": "UpdateBankCommission",
+              "description": "Actualiza la comisión de transacciones de un banco.",
+              "usage": "exports['muhaddil-banking']:UpdateBankCommission(source, bankId, newRate)",
+              "side": "server"
+            },
+            {
+              "name": "WithdrawBankEarnings",
+              "description": "Retira las ganancias acumuladas de un banco.",
+              "usage": "exports['muhaddil-banking']:WithdrawBankEarnings(source, bankId)",
+              "side": "server"
+            },
+            {
+              "name": "SellBank",
+              "description": "Vende la propiedad del banco.",
+              "usage": "exports['muhaddil-banking']:SellBank(source, bankId)",
+              "side": "server"
+            },
+            {
+              "name": "TransferBank",
+              "description": "Transfiere la propiedad del banco a otro jugador.",
+              "usage": "exports['muhaddil-banking']:TransferBank(source, bankId, targetPlayerId)",
+              "side": "server"
+            },
+            {
+              "name": "RegisterDirectDebit",
+              "description": "Configura un pago recurrente (domiciliación).",
+              "usage": "exports['muhaddil-banking']:RegisterDirectDebit(identifier, accountId, creditor, amount, frequency)",
+              "side": "server"
+            },
+            {
+              "name": "CancelDirectDebitById",
+              "description": "Cancela una domiciliación activa por su ID.",
+              "usage": "exports['muhaddil-banking']:CancelDirectDebitById(debitId)",
+              "side": "server"
+            },
+            {
+              "name": "GetPlayerCreditScore",
+              "description": "Devuelve la puntuación crediticia actual de un jugador.",
+              "usage": "exports['muhaddil-banking']:GetPlayerCreditScore(identifier)",
+              "side": "server"
+            },
+            {
+              "name": "GetTopAccounts",
+              "description": "Devuelve una lista de las cuentas más ricas.",
+              "usage": "exports['muhaddil-banking']:GetTopAccounts(limit)",
+              "side": "server"
+            },
+            {
+              "name": "GetActiveLoans",
+              "description": "Devuelve todos los préstamos activos actualmente en el servidor.",
+              "usage": "exports['muhaddil-banking']:GetActiveLoans()",
+              "side": "server"
+            },
+            {
+              "name": "CancelLoan",
+              "description": "Cancela un préstamo administrativamente.",
+              "usage": "exports['muhaddil-banking']:CancelLoan(loanId)",
+              "side": "server"
+            },
+            {
+              "name": "GetAccountInfo",
+              "description": "Devuelve detalles administrativos completos de una cuenta.",
+              "usage": "exports['muhaddil-banking']:GetAccountInfo(accountId)",
+              "side": "server"
+            },
+            {
+              "name": "ResetPlayerBank",
+              "description": "Reinicia completamente todos los datos bancarios de un jugador.",
+              "usage": "exports['muhaddil-banking']:ResetPlayerBank(identifier)",
+              "side": "server"
+            },
+            {
+              "name": "OpenBankById",
+              "description": "Abre la interfaz bancaria para una ubicación específica.",
+              "usage": "exports['muhaddil-banking']:OpenBankById(bankId)",
+              "side": "client"
+            },
+            {
+              "name": "OpenNearestBank",
+              "description": "Abre la interfaz bancaria para la ubicación más cercana.",
+              "usage": "exports['muhaddil-banking']:OpenNearestBank()",
+              "side": "client"
+            },
+            {
+              "name": "CloseBank",
+              "description": "Cierra la interfaz bancaria.",
+              "usage": "exports['muhaddil-banking']:CloseBank()",
+              "side": "client"
+            },
+            {
+              "name": "IsBankOpen",
+              "description": "Devuelve si la interfaz bancaria está abierta actualmente.",
+              "usage": "exports['muhaddil-banking']:IsBankOpen()",
+              "side": "client"
+            },
+            {
+              "name": "GetCurrentBank",
+              "description": "Devuelve información sobre la ubicación bancaria abierta actualmente.",
+              "usage": "exports['muhaddil-banking']:GetCurrentBank()",
+              "side": "client"
+            },
+            {
+              "name": "OpenATM",
+              "description": "Abre la interfaz del cajero automático (ATM).",
+              "usage": "exports['muhaddil-banking']:OpenATM()",
+              "side": "client"
+            },
+            {
+              "name": "IsATMOpen",
+              "description": "Devuelve si la interfaz del cajero automático está abierta.",
+              "usage": "exports['muhaddil-banking']:IsATMOpen()",
+              "side": "client"
+            },
+            {
+              "name": "useCheck",
+              "description": "Activa la lógica para usar un cheque físico.",
+              "usage": "exports['muhaddil-banking']:useCheck(data)",
+              "side": "client"
+            },
+            {
+              "name": "HasStolenCard",
+              "description": "Comprueba si el jugador lleva una tarjeta denunciada como robada.",
+              "usage": "exports['muhaddil-banking']:HasStolenCard()",
+              "side": "client"
             }
           ],
           "events": [],
