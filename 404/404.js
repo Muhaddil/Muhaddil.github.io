@@ -5,11 +5,11 @@ function getContentFor404() {
   const routes = [
     {
       match: "/rsswikipagecreator",
-      title: "404 - EOL",
+      title: "404 - En Mantenimiento",
       message:
-        "Este proyecto llegó a su fin de vida (EOL) por problemas con dependencias requeridas y ya no está disponible.",
+        "Este proyecto está siendo actualizado para mejorar la estética.",
       extra:
-        'Si buscas poder seguir subiendo tus descubrimientos, puedes usar la <a href="https://wiki.nmscd.com/?ref=nmscd">herramienta pública del NMSCD</a>.',
+        'De mientras, si buscas poder seguir subiendo tus descubrimientos, puedes usar la <a href="https://wiki.nmscd.com/?ref=nmscd">herramienta pública del NMSCD</a>.',
       buttonText: "Regresar al Menú Principal",
       buttonHref: "/",
     },
