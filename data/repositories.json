@@ -22,6 +22,17 @@
     "icon": "fas fa-external-link-alt"
   },
   {
+    "title": { "es": "Asia Rocsta Archive", "en": "Asia Rocsta Archive" },
+    "description": {
+      "es": "Todo sobre el Asia Rocsta: piezas, equivalencias OEM, guías de reparación, problemas comunes y comunidad de restauradores.",
+      "en": "Everything about the Asia Rocsta: parts, OEM cross-references, repair guides, common issues, and restorer community."
+    },
+    "stack": ["TypeScript", "React", "SQLite3"],
+    "link": "https://muhaddil.github.io/asia-rocsta-hub/",
+    "linkText": { "es": "Ver Proyecto", "en": "View Project" },
+    "icon": "fas fa-external-link-alt"
+  },
+  {
     "title": { "es": "Muhaddil horarios", "en": "Muhaddil schedules" },
     "description": {
       "es": "Una aplicación web moderna y flexible para la gestión de horarios, actividades y turnos.",
