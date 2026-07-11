@@ -5,13 +5,13 @@ function getContentFor404() {
   const routes = [
     {
       match: "/rsswikipagecreator",
-      title: "404 - En Mantenimiento",
+      title: "404 - No encontrado",
       message:
-        "Este proyecto está siendo actualizado para mejorar la estética.",
-      extra:
-        'De mientras, si buscas poder seguir subiendo tus descubrimientos, puedes usar la <a href="https://wiki.nmscd.com/?ref=nmscd">herramienta pública del NMSCD</a>.',
+        "Lo sentimos, esta página no existe.",
+      // extra:
+      //   'De mientras, si buscas poder seguir subiendo tus descubrimientos, puedes usar la <a href="https://wiki.nmscd.com/?ref=nmscd">herramienta pública del NMSCD</a>.',
       buttonText: "Regresar al Menú Principal",
-      buttonHref: "/",
+      buttonHref: "/RSSWikiPageCreator/",
     },
   ];
   const match = routes.find((r) => path.startsWith(r.match));
